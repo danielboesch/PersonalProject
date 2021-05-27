@@ -35,6 +35,18 @@ start_date DATE
 end_date DATE
 );
 
+CREATE TABLE utah_products (
+product_id SERIAL PRIMARY KEY
+product_name VARCHAR(200)
+product_type VARCHAR(100)
+loaction_id INT REFERENCES locations(location_id)
+zipcode INT 
+product_price INT
+product_img TEXT
+start_date DATE
+end_date DATE
+);
+
 
 CREATE TABLE product_cart (
 product_cart_id SERIAL PRIMARY KEY
@@ -42,3 +54,13 @@ product_id INT REFERENCES products(product_id)
 cart_id INT REFERENCES carts(cart_id)
 quantity INT
 );
+
+INSERT INTO locations
+(location_name)
+values
+('utah')
+
+INSERT INTO locations
+(location_name)
+values
+('california')

@@ -5,6 +5,7 @@ const initialState = {
 
 //action types
 const SET_USER = "SET_USER";
+const LOGOUT = 'LOGOUT'
 
 //action builders
 export function setUser(user) {
@@ -12,6 +13,13 @@ export function setUser(user) {
     type: SET_USER,
     payload: user,
   };
+}
+
+export function logout(){
+  return {
+    type: LOGOUT,
+    payload: initialState
+  }
 }
 
 //reducers
