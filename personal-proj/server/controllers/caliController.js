@@ -1,5 +1,5 @@
 module.exports = {
-    getUtahProducts: (req, res) => {
+    getCaliProducts: (req, res) => {
         const db = req.app.get('db')
         db.products.get_products().then(vans => {
             res.status(200).send(vans)

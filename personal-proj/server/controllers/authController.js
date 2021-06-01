@@ -15,6 +15,7 @@ module.exports = {
         delete user.password
         req.session.user = user
         req.session.user.cart_id = cart.cart_id
+        // console.log(req.session)
         return res.status(200).send(req.session.user)
     },
     login: async (req, res) => {
@@ -33,11 +34,15 @@ module.exports = {
         delete user.password
         req.session.user = user
         req.session.user.cart_id = cart.cart_id
+        // console.log(req.session)
         return res.status(200).send(req.session.user)
     },
     logout: (req, res) => {
         req.session.destroy()
         res.sendStatus(200)
+        // console.log(req.session)
     },
-    getUser: (req, res) => {},
+    getUser: (req, res) => {
+        res.status(200).send(req.session.user)
+    },
 }

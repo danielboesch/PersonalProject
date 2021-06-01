@@ -1,9 +1,53 @@
-const California = () => {
+import {useState, useEffect} from 'react'
+import axios from 'axios'
+import Calendar from './Calendar'
+import {Component, connect} from 'react-redux'
+
+
+
+
+const Cali = (props) => {
+    const [caliProducts, setCaliProducts] = useState([]);
+    const [rentalDates, setRentalDates] = useState();
+
+    useEffect(() => {
+        axios.get('/api/products')
+        .then((res) => {
+            setCaliProducts(res.data)
+        })
+        .catch(err => console.log(err))
+    }, [])
+
+    const handleAddToCart = (product_id) => {
+        axios.get(`/api/cart/${product_id}`)
+        .then(() => console.log('success'))
+        .catch((err) => console.log(err))
+    }
+
+    
+
     return(
         <div>
             <h1>California Page</h1>
+            {caliProducts.map((product) => {
+                console.log(Calendar.state)
+                if(product.location_id === 2){
+
+                    return (
+                       <div className='caliVanBox' key={product.product_id}>
+                           <h4>{product.product_name}</h4>
+                           <img className='pics' src={product.product_img}/>
+                           <br/>
+                           <Calendar />
+                           <br/>
+                           {props.user && <button onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
+                       </div>
+                           )
+                       }
+            })}
         </div>
     )
 }
+const mapStateToProps = (store) => store.auth
+export default connect(mapStateToProps)(Cali)
 
-export default California
