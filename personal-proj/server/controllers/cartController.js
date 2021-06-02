@@ -16,7 +16,7 @@ module.exports = {
         })
     },
     addToCart: (req, res) => {
-        const db = req.app('db')
+        const db = req.app.get('db')
         const {user} = req.session
         const {product_id} = req.params
 

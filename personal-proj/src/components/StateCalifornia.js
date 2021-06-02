@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Calendar from './Calendar'
 import {Component, connect} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+
 
 
 
@@ -9,6 +11,7 @@ import {Component, connect} from 'react-redux'
 const Cali = (props) => {
     const [caliProducts, setCaliProducts] = useState([]);
     const [rentalDates, setRentalDates] = useState();
+    const {user} = useSelector((store) => store.auth)
 
     useEffect(() => {
         axios.get('/api/products')
@@ -19,12 +22,10 @@ const Cali = (props) => {
     }, [])
 
     const handleAddToCart = (product_id) => {
-        axios.get(`/api/cart/${product_id}`)
-        .then(() => console.log('success'))
+        axios.post(`/api/cart/${product_id}`)
+        .then(() => console.log('test test'))
         .catch((err) => console.log(err))
     }
-
-    
 
     return(
         <div>
@@ -40,9 +41,9 @@ const Cali = (props) => {
                            <br/>
                            <Calendar />
                            <br/>
-                           {props.user && <button onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
+                           {user && <button onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
                        </div>
-                           )
+                           ) 
                        }
             })}
         </div>

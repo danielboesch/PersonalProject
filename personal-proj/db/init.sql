@@ -34,10 +34,12 @@ start_date DATE,
 end_date DATE
 );
 
-CREATE TABLE vans_cali (
-van_id SERIAL PRIMARY KEY,
-van_name VARCHAR(200),
-van_description VARCHAR(100),
+CREATE TABLE products (
+product_id SERIAL PRIMARY KEY,
+product_name VARCHAR(200),
+product_type VARCHAR(100),
+location_id INT REFERENCES locations(location_id),
+product_description VARCHAR(100),
 rating INT,
 zipcode INT,
 product_price INT,

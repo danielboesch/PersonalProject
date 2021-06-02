@@ -24,7 +24,7 @@ class Calendar extends Component {
 
     render(){
         return(
-            <return className='calendarApp'>
+            <div className='calendarApp'>
                 <DateRangePicker
                 startDate={this.state.startDate} // momentPropTypes.momentObj or null,
                 startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
@@ -34,7 +34,7 @@ class Calendar extends Component {
                 focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                 onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                 />
-            </return>
+            </div>
 
         )
     };

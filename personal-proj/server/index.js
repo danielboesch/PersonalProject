@@ -9,7 +9,7 @@ const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 
 //CONTROLLERS
 const authCtrl = require("./controllers/authController");
-const utahCtrl = require('./controllers/utahController');
+const productCtrl = require('./controllers/utahController');
 const cartCtrl = require('./controllers/cartController')
 
 //APP INSTANCE CREATED
@@ -22,7 +22,7 @@ app.use(
     secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 2345678 },
+    cookie: { maxAge: 1000 *60 *60 *24 },
   })
 );
 
@@ -45,9 +45,12 @@ app.post("/auth/register", authCtrl.register);
 app.post("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
 
-//LOCATIONS
-app.get('/api/products', utahCtrl.getUtahProducts)
+//PRODUCTS
+app.get('/api/products', productCtrl.getUtahProducts)
 
 //CART
 app.get('/api/cart', cartCtrl.getCart)
-app.get('/api/cart/:product_id', cartCtrl.addToCart)
+app.post('/api/cart/:product_id', cartCtrl.addToCart)
+
+//CALENDAR
+app.post('/api/cart/:product_id', cartCtrl.addToCart)
