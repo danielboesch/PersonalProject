@@ -38,7 +38,6 @@ class Calendar extends Component {
                 onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                 />
                 <br></br>
-                <button onClick={this.alertEndDate}>testtesttest</button>
             </div>
 
         )

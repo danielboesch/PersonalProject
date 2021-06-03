@@ -4,7 +4,7 @@ import {initialState} from '../redux/authReducer'
 
 const Header = () => {
     return(
-        <header>
+        <header className="headerMain">
             <Link to='/'>Dash</Link>
             <Link to='/auth'>Auth</Link>
             <Link to='/utah'>Utah</Link>

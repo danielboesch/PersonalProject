@@ -39,11 +39,7 @@ const Cali = (props) => {
 
     }
 
-    // let newStartDate = (startDate) => {
-    //     if(startDate === ""){
-    //         setStartDate("test")
-    //     }
-    // }
+
 
     return(
         <div>
@@ -57,7 +53,7 @@ const Cali = (props) => {
                            <h4>{product.product_name}</h4>
                            <img className='pics' src={product.product_img}/>
                            <br/>
-                           <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>
+                           {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
                            <br/>
                            {user && <button onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
                        </div>
