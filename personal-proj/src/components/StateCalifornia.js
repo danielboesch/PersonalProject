@@ -39,6 +39,12 @@ const Cali = (props) => {
 
     }
 
+    // let newStartDate = (startDate) => {
+    //     if(startDate === ""){
+    //         setStartDate("test")
+    //     }
+    // }
+
     return(
         <div>
             <h1>California Page</h1>

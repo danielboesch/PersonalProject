@@ -1,4 +1,4 @@
 INSERT INTO products
-(user_id, cart_id, date_start2, date_end)
+(user_id, cart_id)
 VALUES
-($1, $2, $3, $4);
+($1, $2);

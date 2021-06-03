@@ -33,16 +33,21 @@ const Cart = (props) => {
         .catch(err => console.log(err))
     }
 
+
+
+
     return(
         <div>
             <h1>Cart Page</h1>
-            {cart.map((product) => {
-                // console.log(product)
+            {cart.map((product) => { 
+
+                console.log(product)
                 return(
                     <div key={product.product_cart_id}>
                         <h4>{product.product_name}</h4>
                         <h5>Qty: {product.quantity}</h5>
-                        <h5>{product.date_start2} TO {product.date_end}</h5>
+                        <h5>Start: {product.date_start2}</h5>
+                        <h5>End: {product.date_end}</h5>
                         <button onClick={() => handleDeleteFromCart(product.product_id)}>X</button>
                         <button onClick={() => handleChangeQty(product.product_id, product.quantity - 1)}>-</button>
                         <button onClick={() => handleChangeQty(product.product_id, product.quantity + 1)}>+</button>
