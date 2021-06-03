@@ -16,10 +16,10 @@ class Calendar extends Component {
     } 
 
     alertStartDate = () => {
-        alert(this.state.startDate)
+        alert(this.props.startDate)
     }
     alertEndDate = () => {
-        alert(this.state.endDate)
+        alert(this.props.endDate)
     }
 
     render(){
@@ -37,6 +37,8 @@ class Calendar extends Component {
                 focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                 onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                 />
+                <br></br>
+                <button onClick={this.alertEndDate}>testtesttest</button>
             </div>
 
         )
