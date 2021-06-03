@@ -98,20 +98,20 @@ module.exports = {
         })
     },
     changeCartQty: (req, res) => {
-        // const db = req.app.get('db')
-        // const {user} = req.session
-        // const {product_id} = req.params
-        // const {quantity} = req.body
-        // if(!user){
-        //     return res.status(401).send("User not logged in.")
-        // }
-        // db.cart.change_cart_qty(user.cart_id, product_id, quantity)
-        // .then((cart) => {
-        //     res.status(200).send(cart)
-        // }).catch(err => {
-        //     console.log(err)
-        //     res.status(500).send(err)
-        // })
+        const db = req.app.get('db')
+        const {user} = req.session
+        const {product_id} = req.params
+        const {quantity} = req.body
+        if(!user){
+            return res.status(401).send("User not logged in.")
+        }
+        db.cart.change_qty(user.cart_id, product_id, quantity)
+        .then((cart) => {
+            res.status(200).send(cart)
+        }).catch(err => {
+            console.log(err)
+            res.status(500).send(err)
+        })
 
     }
 

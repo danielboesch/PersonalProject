@@ -53,6 +53,7 @@ app.get('/api/products', productCtrl.getUtahProducts)
 app.get('/api/cart', cartCtrl.getCart)
 app.post('/api/cart/:product_id', cartCtrl.addToCart)
 app.delete('/api/cart/:product_id', cartCtrl.deleteItemFromCart)
+app.put(`/api/cart/:product_id`, cartCtrl.changeCartQty)
 
 // //CALENDAR
 // app.post('/api/cart/:product_id', calendarCtrl.addStartDate)

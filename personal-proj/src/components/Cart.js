@@ -25,6 +25,14 @@ const Cart = (props) => {
         .catch(err => console.log(err))
     }
 
+    const handleChangeQty = (product_id, quantity) => {
+        axios.put(`/api/cart/${product_id}`, {quantity})
+        .then((res) => {
+            dispatch(setCart(res.data))
+        })
+        .catch(err => console.log(err))
+    }
+
     return(
         <div>
             <h1>Cart Page</h1>
@@ -35,6 +43,8 @@ const Cart = (props) => {
                         <h4>{product.product_name}</h4>
                         <h5>Qty: {product.quantity}</h5>
                         <button onClick={() => handleDeleteFromCart(product.product_id)}>X</button>
+                        <button onClick={() => handleChangeQty(product.product_id, product.quantity - 1)}>-</button>
+                        <button onClick={() => handleChangeQty(product.product_id, product.quantity + 1)}>+</button>
                         </div>
                 )
             })}
