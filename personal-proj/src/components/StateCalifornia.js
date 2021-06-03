@@ -10,9 +10,11 @@ import {useSelector, useDispatch} from 'react-redux'
 
 const Cali = (props) => {
     const [caliProducts, setCaliProducts] = useState([]);
-    const [rentalDates, setRentalDates] = useState();
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
     const {user} = useSelector((store) => store.auth)
 
+    
     useEffect(() => {
         axios.get('/api/products')
         .then((res) => {
@@ -22,9 +24,19 @@ const Cali = (props) => {
     }, [])
 
     const handleAddToCart = (product_id) => {
-        axios.post(`/api/cart/${product_id}`)
-        .then(() => console.log('test test'))
+        axios.post(`/api/cart/${product_id}`, {startDate, endDate})
+        .then(() => console.log('sent to cart'))
         .catch((err) => console.log(err))
+
+
+        // if(startDate && endDate != null){
+        //     axios.post(`/api/cart/${product_id}`, {startDate, endDate})
+        //     .then(() => console.log('sent to cart'))
+        //     .catch((err) => console.log(err))
+        // } else if(startDate && endDate === null){
+        //     alert("You need to add dates.")
+        // }
+
     }
 
     return(
@@ -39,7 +51,7 @@ const Cali = (props) => {
                            <h4>{product.product_name}</h4>
                            <img className='pics' src={product.product_img}/>
                            <br/>
-                           <Calendar />
+                           <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>
                            <br/>
                            {user && <button onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
                        </div>

@@ -1,7 +1,6 @@
 // initial state 
 const initialState = {
-    startDate: [],
-    endDate: []
+    endDate: [],
 }
 
 //action types

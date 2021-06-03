@@ -11,6 +11,7 @@ const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
 const authCtrl = require("./controllers/authController");
 const productCtrl = require('./controllers/utahController');
 const cartCtrl = require('./controllers/cartController')
+const calendarCtrl = require('./controllers/calendarController')
 
 //APP INSTANCE CREATED
 const app = express();
@@ -51,6 +52,7 @@ app.get('/api/products', productCtrl.getUtahProducts)
 //CART
 app.get('/api/cart', cartCtrl.getCart)
 app.post('/api/cart/:product_id', cartCtrl.addToCart)
+app.delete('/api/cart/:product_id', cartCtrl.deleteItemFromCart)
 
-//CALENDAR
-app.post('/api/cart/:product_id', cartCtrl.addToCart)
+// //CALENDAR
+// app.post('/api/cart/:product_id', calendarCtrl.addStartDate)
