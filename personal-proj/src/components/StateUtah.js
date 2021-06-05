@@ -32,9 +32,24 @@ const Utah = (props) => {
                 <div className="mainImg"></div>
             </div>
               <section className='utahSection1'>
-              {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
 
               </section>
+
+
+
+
+                    <div className='calendarOuterBox'>
+
+                        <p className="startOfSomethingText">The Start of <br></br><b className="somethingGoodText">Something Good</b></p>
+                        {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
+
+
+                    </div>
+
+
+
+
+
               <section  className='allMappedVans'>
 
              
