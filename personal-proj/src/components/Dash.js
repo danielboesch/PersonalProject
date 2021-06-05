@@ -1,9 +1,9 @@
 import {useState} from 'react'
-import Auth from './Auth'
+import {logout} from '../redux/authReducer'
 
 
 const Dash = () => {
-    const [showMenu, setShowMenu] = useState(true)
+    const [showMenu, setShowMenu] = useState(false)
 
     const toggleMenu = () => {
         // alert(showMenu)

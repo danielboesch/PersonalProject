@@ -1,5 +1,6 @@
 /* -------------------------------------------   HOME PAGE   ------------------------------------------------------ */
 
+/*      Yellow           -   rgb(255, 198, 112)       */
 /*      Green            -   rgb(0, 75, 56)       */
 /*      Green2 (lighter) -   rgb(0, 109, 82)       */
 
@@ -31,6 +32,7 @@
   margin-top: -140px;
   margin-bottom: -150px;
   z-index: -5;
+
 }
 
 .videoBox {
@@ -43,7 +45,7 @@
 
 .dashSection1 {
   height: 70px;
-  background-color: rgb(237, 239, 245);
+  background-color: rgb(255, 198, 112);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +73,7 @@ margin-right: 40px;
 .homeTitle {
 font-size: 80px;
 color: white;
+font-family: hind;
 }
 
 .homeTitleButton {
@@ -91,7 +94,7 @@ color: white;
   margin-bottom: 50px;
   position: absolute;
   top: 180px;
-  background-color: rgb(0, 75, 56);
+  background-color: rgb(0, 92, 69);
   border: none;
   color: white;
   font-size: 17px;
@@ -190,7 +193,7 @@ color: rgb(44, 44, 44);
   left: 15px;
 }
 .somethingGoodText {
-  color: rgb(0, 75, 56);
+  /* color: rgb(0, 92, 69); */
 }
 
 
@@ -206,7 +209,8 @@ border: 1px solid black;
 border-radius: 5px 5px 0px 0px;
 margin-bottom: 10px;
 box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
-/* z-index: 2; */
+z-index: -2;
+
 }
 
 .homeLoginPassword{
@@ -220,6 +224,8 @@ box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 5px 5px;
   margin-bottom: 60px;
   box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  z-index: -2;
+
   
 }
 .homeLoginEmail:focus {
@@ -229,7 +235,7 @@ box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
   outline-width: 0;
 }
 .authHeaderColor{
-background-color: rgb(216, 216, 218);
+background-color: rgb(255, 198, 112);
 width: 100%;
 height: 70px;
 }
@@ -242,22 +248,24 @@ width: 100%;
 height: 50px;
 display: flex;
 justify-content: space-evenly;
+z-index: -1;
 }
 .homeLoginBtn{
   width: 80px;
   height: 35px;
   border: none;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.205);
-  background-color: rgb(0, 109, 82);
+  background-color: rgb(0, 92, 69);
   color: white;
   font-family: hind;
+  
 }
 .homeSignUpBtn{
 width: 80px;
 height: 35px;
 border: none;
 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.205);
-background-color: rgb(0, 109, 82);
+background-color: rgb(0, 92, 69);
 color: white;
 font-family: hind;
 }
@@ -329,4 +337,53 @@ font-family: hind;
 }
 
 
-/* --------------------------------------------------------------------------------------- */
+/* -------------------------------------   UTAH PAGE    -------------------------------------------------- */
+
+.mainImg {
+width: 100vw;
+height: 550px;
+background: url(https://images.squarespace-cdn.com/content/v1/568429b7c647addb5746fafe/1500238782437-PJY4G82PO1DW1VTDQJB7/ke17ZwdGBToddI8pDm48kKAwwdAfKsTlKsCcElEApLR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UegTYNQkRo-Jk4EWsyBNhwKrKLo5CceA1-Tdpfgyxoog5ck0MD3_q0rY3jFJjjoLbQ/utah-desert-vanlife-dogs-2.jpg?format=2500w) ;
+background-position-y: 80%;
+background-position-x: center;
+background-size: cover;
+
+/* background-color: coral; */
+}
+
+.mainImgBox {
+  display: flex;
+  width: 100%;
+  height: 550px;
+  /* background-color: rgba(165, 42, 42, 0.151); */
+  overflow: hidden;
+  justify-content: center;
+}
+
+.utahText{
+  position: absolute;
+  font-family: hind;
+  background: -webkit-linear-gradient(90deg, rgba(36,32,33,1) 10%, rgba(80,49,46,1) 35%, rgba(226,33,28,1) 50%, rgba(237,116,35,1) 65%, rgba(251,196,36,1) 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow:  white; */
+  font-size: 150px;
+  margin-top: -60px;
+  /* z-index: 2; */
+}
+
+
+
+.utahSection1 {
+  width: 100vw;
+  height: 70px;
+  background-color: rgb(255, 198, 112);
+}
+
+
+.mappedUtahVans {
+  display: flex;
+  flex-direction: row;
+  background-color: teal;
+  width: 650px;
+  height: 200px;
+}
