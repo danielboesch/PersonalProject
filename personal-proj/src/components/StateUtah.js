@@ -31,27 +31,41 @@ const Utah = (props) => {
                     <h1 className='utahText'>Explore Utah</h1>
                 <div className="mainImg"></div>
             </div>
-              <section className='utahSection1'></section>
+              <section className='utahSection1'>
+              {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
+
+              </section>
+              <section  className='allMappedVans'>
+
+             
             {utahProducts.map((product) => {
                 console.log(product.location_id)
                 if(product.location_id === 1){
                  return (
                      <div key={product.product_id}>
                             <div className='mappedUtahVans'>
-                            <h4>{product.product_name}</h4>
-                            <h4>${product.product_price}/day</h4>
-                            <h4>{product.product_description}</h4>
-                            <h4>{product.rating}⭐</h4>
-                            <div></div>
-                            <img className='pics' src={product.product_img}/>
+                            <div className='mappedImageBox'>
+                                <img className='pics' src={product.product_img}/>
+                            </div>
+
+                            <div className='mappedUtahInfo'>
+                                <h4 className="mappedDesc">{product.product_description}</h4>
+                                <h4 className="mappedTitle">{product.product_name}</h4>
+                                <h4 className="mappedCapacity">Sleeps <b>{product.capacity}</b></h4>
+                                <div className='priceRatingBox'>
+                                    <h4 className="mappedPrice"><b>${product.product_price}</b> per day</h4>
+                                    <h4 className="mappedRating">{product.rating}★</h4>
+                                </div>
+                            </div>
                             {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
-                            {user && <button onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
+                            {user && <button className="reserveBtn" onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
                             
                             </div>
                         </div>
                         )
                     }
             })}
+             </section>
             
         </div>
     )
