@@ -27,9 +27,15 @@ const Utah = (props) => {
        
     return(
         <div>
+            <h5 className='linkHomeTextUtah'>Home</h5>
+            <h5 className='linkCali'>California</h5>
+        <div className="cartDivUtah" >
+            
+            <img className='cartBtnUtah' alt='cart button' src="https://png.pngtree.com/png-vector/20190927/ourlarge/pngtree-shopping-cart-icon-png-image_1736148.jpg"></img>
+        </div>
             <div className="mainImgBox">
                     <h1 className='utahText'>Utah</h1>
-                    <h1 className='utahText2'>Utah</h1>
+                    {/* <h1 className='utahText2'>Utah</h1> */}
                 <div className="mainImg"></div>
             </div>
               <section className='utahSection1'>

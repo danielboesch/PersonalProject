@@ -8,7 +8,7 @@ import California from './components/StateCalifornia'
 export default(
     <Switch>
         <Route exact path = '/' component={Dash} />
-        <Route path = '/auth' component={Auth} />
+        {/* <Route path = '/auth' component={Auth} /> */}
         <Route path = '/cart' component={Cart} />
         <Route path = '/utah' component={Utah} />
         <Route path = '/california' component={California} />

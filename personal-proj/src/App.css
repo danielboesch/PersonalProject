@@ -47,8 +47,8 @@
 }
 
 .dashSection1 {
-  height: 70px;
-  background-color: rgb(255, 198, 112);
+  height: 50px;
+  background-color: rgb(0, 109, 82);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +63,7 @@
   /* background-color: cadetblue; */
   display: flex;
   align-items: center;
+
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   position: absolute;
@@ -71,6 +72,7 @@
 
 .dashCheckList > li{
 margin-right: 40px;
+color: white;
 }
 
 .homeTitle {
@@ -97,7 +99,7 @@ font-family: hind;
   margin-bottom: 50px;
   position: absolute;
   top: 180px;
-  background-color: rgb(0, 92, 69);
+  background-color: rgb(255, 153, 0);
   border: none;
   color: white;
   font-size: 17px;
@@ -289,6 +291,48 @@ font-family: hind;
   border-radius: 25px;
 
 }
+.linkHomeText {
+  display: flex;
+  position: absolute;
+  right: 305px;
+  top: 40px;
+  color: white;
+  width: 70px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+
+}
+.linkHomeTextUtah {
+  display: flex;
+  position: absolute;
+  right: 305px;
+  top: 40px;
+  color: rgb(61, 61, 61);
+  width: 70px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+
+}
+.linkCali {
+  display: flex;
+  position: absolute;
+  right: 210px;
+  top: 40px;
+  color: rgb(61, 61, 61);
+  width: 95px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+
+}
 
 .worldBtn{
   display: flex;
@@ -296,10 +340,52 @@ font-family: hind;
   top: 51px;
   width: 20px;
   height: 20px;
-  
+}
+.cartBtn{
+  display: flex;
+  right: 183px;
+  top: 51px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.cartBtnUtah{
+  display: flex;
+  right: 183px;
+  top: 51px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /* filter: invert(100%); */
 }
 
 .worldDiv {
+  display: flex;
+  position: absolute;
+  right: 173px;
+  top: 40px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.cartDiv {
+  display: flex;
+  position: absolute;
+  right: 173px;
+  top: 40px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.cartDivUtah {
   display: flex;
   position: absolute;
   right: 173px;
@@ -326,9 +412,35 @@ font-family: hind;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.15);
 }
+.cartBtn:hover {
+  cursor: pointer;
+}
+.cartBtnUtah:hover {
+  cursor: pointer;
+}
+.cartDiv:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.cartDivUtah:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.15);
+}
 .learnMoreText:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.15);
+}
+.linkHomeText:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.linkHomeTextUtah:hover {
+  cursor: pointer;
+  background-color: rgba(121, 121, 121, 0.15);
+}
+.linkCali:hover {
+  cursor: pointer;
+  background-color: rgba(121, 121, 121, 0.15);
 }
 .homeLoginBtn:hover {
   cursor: pointer;
@@ -367,16 +479,27 @@ z-index: -1;
 .utahText{
   position: absolute;
   font-family: hind;
-  background: -webkit-linear-gradient(90deg, rgba(36,32,33,1) 10%, rgba(80,49,46,1) 35%, rgba(226,33,28,1) 50%, rgba(237,116,35,1) 65%, rgba(251,196,36,1) 75%);
-  /* color: rgb(255, 198, 112); */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* text-shadow: 3px 3px white; */
+  color: rgb(61, 61, 61);
+  text-shadow: 3px 3px rgba(255, 255, 255, 0.50);
   font-size: 150px;
   top: -46px;
   left: 50px;
   z-index: 2;
 }
+/* .utahText{
+  position: absolute;
+  font-family: hind;
+  background: -webkit-linear-gradient(90deg, rgba(36,32,33,1) 10%, rgba(80,49,46,1) 35%, rgba(226,33,28,1) 50%, rgba(237,116,35,1) 65%, rgba(251,196,36,1) 75%); */
+  /* color: rgb(255, 198, 112); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  /* text-shadow: 3px 3px white; */
+  /* font-size: 150px;
+  top: -46px;
+  left: 50px;
+  z-index: 2;
+} */
+
 .utahText2{
   position: absolute;
   font-family: hind;
@@ -389,8 +512,8 @@ z-index: -1;
 
 
 .utahSection1 {
-  height: 70px;
-  background-color: #CC998D;
+  height: 50px;
+  background-color: rgb(0, 109, 82);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -469,7 +592,7 @@ z-index: -1;
   height: 30px;
   border: none;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.205);
-  background-color: rgb(0, 92, 69);
+  background-color: rgb(61, 61, 61);
   color: white;
   font-family: Open Sans;
   margin-top: 15px;
@@ -477,7 +600,7 @@ z-index: -1;
 }
 .reserveBtn:hover {
   cursor: pointer;
-  background-color: rgb(0, 102, 77);
+  background-color: rgb(70, 70, 70);
   
 }
 
@@ -504,16 +627,27 @@ z-index: -1;
 .caliText{
   position: absolute;
   font-family: hind;
-  background: -webkit-linear-gradient(90deg, rgba(125,49,0,1) 0%, rgba(191,96,18,1) 24%, rgba(255,186,0,1) 90%);
-  /* color: rgb(255, 198, 112); */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* text-shadow: 3px 3px white; */
+  color: rgb(230, 230, 230);
+  text-shadow: 3px 3px rgb(0, 0, 0);
   font-size: 150px;
   top: -46px;
   left: 50px;
   z-index: 2;
 }
+/* 
+.caliText{
+  position: absolute;
+  font-family: hind;
+  background: -webkit-linear-gradient(90deg, rgba(125,49,0,1) 0%, rgba(191,96,18,1) 24%, rgba(255,186,0,1) 90%); */
+  /* color: rgb(255, 198, 112); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  /* text-shadow: 3px 3px white; */
+  /* font-size: 150px;
+  top: -46px;
+  left: 50px;
+  z-index: 2;
+} */
 .caliText2{
   position: absolute;
   font-family: hind;
@@ -524,11 +658,13 @@ z-index: -1;
 }
 
 .caliSection1 {
-  height: 70px;
-  background-color: rgb(87, 143, 196);
+  height: 50px;
+  background-color: rgb(0, 109, 82);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
+
   
 }
 

@@ -68,10 +68,10 @@ const Header = (props) => {
    </div>
 
 
-<h5 className='learnMoreText'>Learn More</h5>
+{/* <h5 className='learnMoreText'>Learn More</h5>
 <div className="worldDiv" >
 <img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png"></img>
-</div>
+</div> */}
 <div className='userBtn' onClick={toggleMenu}>
     <img className='hamburgerBtn' src='https://static.thenounproject.com/png/659800-200.png'></img>
     <div className='profilePicImg'>
@@ -101,7 +101,7 @@ const Header = (props) => {
 
         <header className="headerMain">
             <Link to='/'>Dash</Link>
-            <Link to='/auth'>Auth</Link>
+            {/* <Link to='/auth'>Auth</Link> */}
             <Link to='/utah'>Utah</Link>
             <Link to='/california'>California</Link>
             <Link to='/cart'>Cart</Link>

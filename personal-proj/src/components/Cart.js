@@ -49,6 +49,10 @@ const Cart = (props) => {
 
     return(
         <div>
+            <h5 className='learnMoreText'>Learn More</h5>
+<div className="worldDiv" >
+<img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png"></img>
+</div>
             <h1>Cart Page</h1>
             {cart.map((product) => { 
                 let startmonth = '';
