@@ -13,7 +13,7 @@ const Dash = () => {
 
     return(
         <div>
-            <header>
+            {/* <header>
 
                 <div className={`loginPopUp ${showMenu ? "show" : ""}`}>
 
@@ -39,7 +39,7 @@ const Dash = () => {
                         <img className='profilePicImg2' src='https://simg.nicepng.com/png/small/128-1280406_view-user-icon-png-user-circle-icon-png.png'></img>
                     </div>
                 </div>
-            </header>
+            </header> */}
             <div className="videoBox">
                 <iframe className='mainVideo' src="https://player.vimeo.com/video/513591708?autoplay=1&loop=1&color=A20B35&background=1" width="640" height="860" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             <div className='homeTitleButton'>

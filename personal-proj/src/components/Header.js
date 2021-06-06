@@ -4,6 +4,7 @@ import {initialState} from '../redux/authReducer'
 
 const Header = () => {
     return(
+
         <header className="headerMain">
             <Link to='/'>Dash</Link>
             <Link to='/auth'>Auth</Link>
@@ -13,6 +14,8 @@ const Header = () => {
             
             <Link to='/auth' onClick={() => {logout()}}>Logout</Link>
         </header>
+
+        
     )
 }
 export default Header

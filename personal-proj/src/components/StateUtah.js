@@ -28,17 +28,18 @@ const Utah = (props) => {
     return(
         <div>
             <div className="mainImgBox">
-                    <h1 className='utahText'>Explore Utah</h1>
-                    <h1 className='utahText2'>Explore Utah</h1>
+                    <h1 className='utahText'>Utah</h1>
+                    <h1 className='utahText2'>Utah</h1>
                 <div className="mainImg"></div>
             </div>
               <section className='utahSection1'>
-
+              <ul class='dashCheckList'>
+                    <li>✓ 100% free roadside assistance</li>
+                    <li>✓ Real people here to help 24/7</li>
+                    <li>✓ Get it delivered</li>
+                    <li>✓ More reviews. More 5-star ratings</li>
+                </ul>
               </section>
-
-
-
-
 
               <section  className='allMappedVans'>
 
