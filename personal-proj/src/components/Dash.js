@@ -4,6 +4,7 @@ import {logout} from '../redux/authReducer'
 import Scroll from './ScrollLocations'
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Footer from './Footer'
 
 
 
@@ -19,7 +20,10 @@ const Dash = () => {
         setShowMenu(!showMenu)
       }
       let scrollBtn = () => {
-        <Scroll/>
+        window.scrollTo(600, 600);
+      };
+      let scrollAbout = () => {
+        window.scrollTo(1275, 1275);
       };
 
 
@@ -28,20 +32,20 @@ const Dash = () => {
     return(
         
         <div>
-            <h5 className='learnMoreText'>Learn More</h5>
+            <h5 className='learnMoreText' onClick={scrollAbout}>Learn More</h5>
         <div className="worldDiv" >
-            <img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png"></img>
+            <img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png" onClick={scrollBtn}></img>
         </div>
             <div className="videoBox">
                 <iframe className='mainVideo' src="https://player.vimeo.com/video/513591708?autoplay=1&loop=1&color=A20B35&background=1" width="640" height="860" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             <div className='homeTitleButton'>
                 <h1 className='homeTitle'>Plan Your Trip Away Today</h1>
-                            <Scroll />
 
-                <button className='findRideBtn scroll-down' onClick={scrollBtn()}><strong>Find Your Ride</strong></button>
+                <button className='findRideBtn scroll-down' onClick={scrollBtn}><strong>Find Your Ride</strong></button>
 
             </div>
             </div>
+            <Scroll/>
             <section className='dashSection1'>
                 <ul class='dashCheckList'>
                     <li>✓ 100% free roadside assistance</li>
@@ -87,8 +91,12 @@ const Dash = () => {
                 </div>
             </section>
             <section className='dashSection3'>
-                <h1>Hello</h1>
+                <div className='section3BigBox'>
+                    <h1>Our Story</h1>
+                    <p>Whether you are considering van life as a part-time or full-time endeavor, investing in or converting a van is a process full of big decisions. Navigating the many different options, set-ups, conversions, and even designing your nomadic lifestyle can feel overwhelming. So before taking the plunge, we're here to give you that van life experience with less commitment. Whether you're looking for a fun way to travel for a road trip or you're considering if the van life is for you, we're here to help.</p>
+                </div>
             </section>
+            <Footer />
 
             
         </div>
