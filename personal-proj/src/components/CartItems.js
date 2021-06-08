@@ -3,7 +3,7 @@ import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
 
-const Cart = (props) => {
+const CartItems = (props) => {
     const {cart} = useSelector((store) => store.cartReducer)
     const dispatch = useDispatch()
 
@@ -42,47 +42,10 @@ const Cart = (props) => {
     return(
         <div>
             <h5 className='learnMoreText'>Learn More</h5>
-            <div className="worldDiv" >
-                <img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png"></img>
-            </div>
-            <h1>Cart Page</h1>
-            <div className='happyCamperBox'>
-                <div className='happyCamperStuff'>
-                    <img className='checkoutLogo' src='https://d1o5877uy6tsnd.cloudfront.net/reserve-production/images/icons/shield-a4c1a09ebef7f7f5096eb5600ef5c5c3.svg'></img>
-                    <h3 className='checkoutTextCamper'>Happy camper guarantee</h3>
-                </div>
-                <h4 className='checkoutTextStars'>Our customer reviews have us seeing stars.</h4>
-            </div>
-            <div className='checkoutInfoBox'>
-                <h3 className='checkoutInfoNameStart'>Start Your Booking</h3>
-                <div className='checkoutInfoNameBox'>
-                <h3 className='checkoutInfoNameText'>Name</h3>
-                  <input className='checkoutInfoFirstName' placeholder='First'></input>
-                  <input className='checkoutInfoLastName'placeholder='Last'></input>
-                </div>
-                <div className='checkoutInfoEmailAndPhone'>
-                    <div className='checkoutInfoEmailBox'>
-                    <h3 className='checkoutInfoEmailText'>Email</h3>
-                    <input className='checkoutInfoEmail' placeholder='Email'></input>
-                    </div>
-                    <div className='checkoutInfoPhoneBox'>
-                    <h3 className='checkoutInfoPhoneText'>Phone</h3>
-                    <input className='checkoutInfoPhone' placeholder='(XXX) XXX-XXXX'></input>
-                    </div>
-                </div>
-
-                <div className='checkoutInfoLegal'>
-                    <input type="checkbox"></input>
-                    <h4>I certify that I am at least 25 years old at the time of rental and I have a valid drivers license.</h4>
-                    <p>By clicking "Agree & Continue", you are agreeing to the Outdoorsy Terms of Service, RV Rental & Optional Insurance Terms, Privacy Policy, and to receive booking-related texts. Standard messaging rates may apply.</p>
-                    <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
-                </div>
-                <button>Agree & Continue</button>
-            </div>
-            <div className='testtest2'>
-
-            <div className='testtest'>
-            
+<div className="worldDiv" >
+<img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png"></img>
+</div>
+            <h1>Cart Pagee</h1>
             {cart.map((product) => { 
                 let startmonth = '';
                 let startday = '';
@@ -436,10 +399,6 @@ const Cart = (props) => {
                 return(
                     <div>
                     <div className='checkoutOrderInfo'>
-                        <div className='checkoutColor'> </div>
-                        <div className='checkoutUserInfo'>
-
-                        </div>
 
                  
                         <div key={product.product_cart_id}  className='checkoutAllVanInfo'>
@@ -447,19 +406,14 @@ const Cart = (props) => {
                                 <img className="checkoutOrderImg" src = {product.product_img}/>
                             </div>
                             <div className='checkoutVanInfo'>
-                            <h4 className='mappedTitle2'>{product.product_name}</h4>
+                            <h4>{product.product_name}</h4>
                             {/* <h5>Qty: {product.quantity}</h5> */}
-                            <h5 className="mappedDesc2">{product.product_description}</h5>
-                            <h5 className="mappedCapacity2">Sleeps {product.capacity}</h5>
-                            <button className='checkoutDeleteBtn' onClick={() => handleDeleteFromCart(product.product_id)}><b>DELETE</b></button>
+                            <h5>Start: {startmonth} {startday}, {startyear}</h5>
+                            <h5>End: {endMonth} {endDay}, {endYear}</h5>
+                            <button onClick={() => handleDeleteFromCart(product.product_id)}>X</button>
                             {/* <button onClick={() => handleChangeQty(product.product_id, product.quantity - 1)}>-</button> */}
                             {/* <button onClick={() => handleChangeQty(product.product_id, product.quantity + 1)}>+</button> */}
                         </div>
-                        </div>
-                        <div className='checkoutDates'>
-                            <h5 className='checkoutDatesStart'>{startmonth} {startday}, {startyear}</h5>
-                            <h5 className='checkoutDatesArrow'> ➤ </h5>
-                            <h5 className='checkoutDatesEnd'>{endMonth} {endDay}, {endYear}</h5>
                         </div>
 
                     </div>
@@ -467,9 +421,7 @@ const Cart = (props) => {
                 )
             })}
         </div>
-        </div>
-        </div>
     )
 }
 
-export default Cart
+export default CartItems

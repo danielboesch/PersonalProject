@@ -3,6 +3,7 @@
 /*      Yellow           -   rgb(255, 198, 112)       */
 /*      Green            -   rgb(0, 75, 56)       */
 /*      Green2 (lighter) -   rgb(0, 109, 82)       */
+/*      Black            -   rgb(61, 61, 61)       */
 
   /* -------------------------------------------   HOME PAGE   ------------------------------------------------------ */
 
@@ -12,7 +13,7 @@
 .pics {
   width: 100%;
   border-radius: 15px;
-  
+  margin-top: -10px;
 }
 .headerMain{
   display: flex;
@@ -22,9 +23,27 @@
 * {
   margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
-::selection { background-color: rgb(0, 136, 102)}
-
+.logo {
+  position: absolute;
+  left: -17px;
+  top: -20px;
+  width: 115px;
+  /* height: 100px; */
+}
+.logoCircle {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  background-color: cadetblue;
+  border-radius: 50%;
+}
 
 /* -------------------------------------------   HOME PAGE   ------------------------------------------------------ */
 .mainVideo {
@@ -55,7 +74,14 @@
   
 }
 .dashSection2 {
-  height: 1000px;
+  min-height: 700px;
+  background-color: rgb(255, 249, 240);
+  margin-top: -25px;
+}
+.dashSection3 {
+  height: 600px;
+  background-color: rgb(255, 198, 112);
+  margin-top: -25px;
 }
 
 .dashCheckList{
@@ -71,7 +97,7 @@
 }
 
 .dashCheckList > li{
-margin-right: 40px;
+margin-right: 100px;
 color: white;
 }
 
@@ -99,7 +125,7 @@ font-family: hind;
   margin-bottom: 50px;
   position: absolute;
   top: 180px;
-  background-color: rgb(255, 153, 0);
+  background-color: rgb(255, 188, 44);
   border: none;
   color: white;
   font-size: 17px;
@@ -107,13 +133,33 @@ font-family: hind;
   border-radius: 5px;
 }
 
+.locationsTextAndBar {
+  /* background-color: teal; */
+  margin-top: 25px;
+  margin-bottom: 50px;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  }
+
 .locationsText {
-font-size: 55px;
+font-size: 70px;
 font-family: hind;
-margin-top: 25px;
-color: rgb(44, 44, 44);
+margin-bottom: 50px;
+margin-top: 20px;
+color: black;
 }
 
+
+.locationsLine{
+  width: 200px;
+  height: 3px;
+  background-color: black;
+  margin-top: 55px;
+  position: absolute;
+}
 
 
 .userBtn {
@@ -236,6 +282,18 @@ z-index: -2;
 .homeLoginEmail:focus {
   outline-width: 0;
 }
+.checkoutInfoEmail:focus {
+  outline-width: 0;
+}
+.checkoutInfoFirstName:focus {
+  outline-width: 0;
+}
+.checkoutInfoPhone:focus {
+  outline-width: 0;
+}
+.checkoutInfoLastName:focus {
+  outline-width: 0;
+}
 .homeLoginPassword:focus {
   outline-width: 0;
 }
@@ -289,6 +347,7 @@ font-family: hind;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 }
 .linkHomeText {
@@ -305,6 +364,25 @@ font-family: hind;
   border-radius: 25px;
 
 }
+.linkHomeTextCali {
+  display: flex;
+  position: absolute;
+  right: 280px;
+  top: 40px;
+  color: white;
+  width: 70px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: hind;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.80);
+
+}
+
 .linkHomeTextUtah {
   display: flex;
   position: absolute;
@@ -317,12 +395,15 @@ font-family: hind;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
 
 }
 .linkCali {
   display: flex;
   position: absolute;
-  right: 210px;
+  right: 215px;
   top: 40px;
   color: rgb(61, 61, 61);
   width: 95px;
@@ -331,6 +412,26 @@ font-family: hind;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
+
+}
+.linkUtah {
+  display: flex;
+  position: absolute;
+  right: 220px;
+  top: 40px;
+  color: white;
+  width: 65px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.80);
 
 }
 
@@ -348,6 +449,8 @@ font-family: hind;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.205);
+
 }
 .cartBtnUtah{
   display: flex;
@@ -356,6 +459,8 @@ font-family: hind;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.205);
+
   /* filter: invert(100%); */
 }
 
@@ -400,6 +505,7 @@ font-family: hind;
 }
 
 
+
 .userBtn:hover {
   cursor: pointer;
   background-color: rgb(250, 250, 250);
@@ -430,7 +536,19 @@ font-family: hind;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.15);
 }
+.learnMoreTextCali:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+}
 .linkHomeText:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.linkHomeTextCali:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.learnMoreTextCali:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.15);
 }
@@ -442,6 +560,10 @@ font-family: hind;
   cursor: pointer;
   background-color: rgba(121, 121, 121, 0.15);
 }
+.linkUtah:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.15);
+}
 .homeLoginBtn:hover {
   cursor: pointer;
   background-color: rgb(0, 122, 92);
@@ -450,8 +572,159 @@ font-family: hind;
   cursor: pointer;
   background-color: rgb(0, 122, 92);
 }
+.homeUtahBtn:hover {
+  cursor: pointer;
+  background-color: rgb(0, 109, 82);
+}
+.findRideBtn:hover {
+  cursor: pointer;
+  background-color: rgb(255, 174, 0);
+}
+.checkoutDeleteBtn:hover {
+  cursor: pointer;
+  background-color: rgb(255, 187, 42);
+}
+
+.holdsAllLocations {
+  /* background-color: darkgreen; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.homeLocationImgBox{
+  display: flex;
+  width: 300px;
+  height: 225px;
+  /* background-color: tomato; */
+  overflow: hidden;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
+}
+.utahBoxInBox{
+  /* background-color: darkgreen; */
+  height: 365px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 115px;
+}
+
+.locationUtah {
+  width: 630px;
+  height: 250px;
+  /* background-color: teal; */
+  border: black 5px solid;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  /* border-radius: 5px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+.locationCali {
+  width: 630px;
+  height: 250px;
+  /* background-color: teal; */
+  border: rgb(37, 37, 37) 5px solid;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 10px;
+  /* margin-left: 10px; */
+  margin-right: 10px;
+}
+
+.dashLocationsUtahText {
+ /* background-color: black; */
+ margin-left: 90px;
+ margin-top: 20px;
+ font-size: 50px;
+ font-family: hind;
+ height: 30px;
+ display: flex;
+ align-items: center;
+ color: white;
+ z-index: 1;
+ position: relative;
+}
+.dashLocationsUtahText2 {
+ /* background-color: black; */
+ margin-left: 15px;
+ margin-top: 20px;
+ font-size: 50px;
+ font-family: hind;
+ height: 30px;
+ display: flex;
+ align-items: center;
+ color: white;
+ z-index: 1;
+ position: relative;
+}
+
+.utahBackgroundColor {
+  background-color: black;
+  width: 315px;
+  height: 60px;
+  bottom: 58px;
+  left: -328px;
+  position: relative;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.dashLocationsUtahInfo {
+/* background-color: cornflowerblue; */
+margin-right: 20px;
+width: 295px;
+font-size: 15px;
+margin-left: 25px;
+margin-top: -50px;
+text-align: justify;
+font-family: Helvetica;
+line-height: 1.6;
+font-weight: 500; 
+}
 
 
+.homeUtahBtn{
+  border: none;
+  width: 250px;
+  height: 40px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.205);
+  background-color: rgb(0, 92, 69);
+  color: white;
+  font-family: hind;
+  /* top: 100px; */
+}
+.quotationMarks{
+  color: rgb(0, 75, 56);
+  font-size: 25px;
+  position: relative;
+  bottom: -105px;
+  left: -152px;
+  font-family:'Times New Roman', Times, serif;
+}
+.quotationMarks2{
+  color: rgb(0, 75, 56);
+  font-size: 25px;
+  position: relative;
+  bottom: -208px;
+  left: -5px;
+  font-family:'Times New Roman', Times, serif;
+}
 /* -------------------------------------   UTAH PAGE    -------------------------------------------------- */
 
 .mainImg {
@@ -517,7 +790,7 @@ z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  /* margin-bottom: 20px; */
 
 }
 
@@ -530,6 +803,7 @@ z-index: -1;
   height: 360px;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .mappedImageBox {
@@ -557,6 +831,12 @@ z-index: -1;
   color: rgb(96, 107, 118);
 
 }
+.mappedDesc2 {
+  font-family: hind;
+  font-weight: 500;
+  color: black;
+
+}
 .mappedTitle {
   font-family: Open Sans;
   font-weight: 600;
@@ -564,7 +844,20 @@ z-index: -1;
   margin-top: -10px;
 
 }
+.mappedTitle2 {
+  font-family: Open Sans;
+  font-weight: 600;
+  text-align: left;
+  /* margin-top: -10px; */
+  margin-top: 10px;
+
+}
 .mappedCapacity {
+  font-family: Open Sans;
+  font-weight: 400;
+
+}
+.mappedCapacity2 {
   font-family: Open Sans;
   font-weight: 400;
 
@@ -634,6 +927,28 @@ z-index: -1;
   left: 50px;
   z-index: 2;
 }
+.caliSubText{
+  position: absolute;
+  font-family: hind;
+  color: rgb(230, 230, 230);
+  text-shadow: 3px 3px rgb(0, 0, 0);
+  font-size: 25px;
+  top: 150px;
+  left: 70px;
+  z-index: 2;
+  text-align: left;
+}
+.utahSubText{
+  position: absolute;
+  font-family: hind;
+  color: rgb(61, 61, 61);
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
+  font-size: 25px;
+  top: 150px;
+  left: 60px;
+  z-index: 2;
+  text-align: left;
+}
 /* 
 .caliText{
   position: absolute;
@@ -663,11 +978,285 @@ z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  /* margin-bottom: 20px; */
 
   
 }
 
 .logoutMenuBtn{
 
+}
+
+/* -------------------------------------------   CHECKOUT PAGE   ------------------------------------------------------ */
+
+.checkoutOrderInfo {
+  background-color: white;
+  height: 150px;
+  width: 105%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px black solid;
+  right: 0;
+  margin-bottom: 20px;
+  margin-right: -15px;
+  float: right;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.checkoutOrderImg{
+
+
+  display: flex;
+  width: 200px;
+  /* height: 225px; */
+  /* background-color: tomato; */
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  
+}
+
+.checkoutOrderImgBox{
+  width: 160px;
+  height: 110px;
+  overflow: hidden;
+  /* background-color: yellow; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  top: 0;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.checkoutAllVanInfo {
+  display: flex;
+  flex-direction: row;
+  height: 110px;
+  width: 440px;
+  /* background-color: rgb(138, 255, 71); */
+  justify-content: space-between;
+  margin-top: -20px;
+}
+.checkoutVanInfo {
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  width: 270px;
+  /* background-color: tomato; */
+  text-align: left;
+}
+
+/* .checkoutUserInfo {
+  background-color: salmon;
+  width: 50vw;
+  height: 500px;
+  position: absolute;
+  left: 0;
+} */
+/* .checkoutColor {
+  background-color: rgb(112, 255, 172);
+  width: 50vw;
+  height: 1000px;
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  margin-top: -122px;
+} */
+
+.testtest {
+  background-color: transparent;
+  border: 2px solid black;
+  width: 90%;
+  height: 100%;
+  min-height: 170px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  margin-right: 40px;
+  margin-top: 140px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.testtest2 {
+  /* background-color: white; */
+  width: 40vw;
+  min-height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -2;
+}
+.checkoutDeleteBtn{
+  border: none;
+  position: absolute;
+  margin-top: 75px;
+  margin-left: 85px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(255, 198, 112);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+  font-family: Open Sans;
+  color: black;
+}
+.checkoutDates {
+  background-color: rgb(61, 61, 61);
+  height: 22px;
+  width: 454px;
+  position: absolute;
+  margin-bottom: -130px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: hind;
+}
+.checkoutDatesStart {
+  /* background-color: orange; */
+  margin-left: 10px;
+}
+.checkoutDatesArrow {
+  /* background-color:skyblue; */
+  
+}
+.checkoutDatesEnd {
+  /* background-color: lightpink; */
+  margin-right: 10px;
+
+}
+.checkoutInfoBox {
+  background-color: cadetblue;
+  position: absolute;
+  left: 50px;
+  top: 200px;
+  width: 750px;
+  height: 600px;
+  text-align: left;
+}
+/* -------------------------------------------  CHECKOUT INFO  -------------------------------------------------------- */
+
+.checkoutInfoNameBox {
+  background-color: coral;
+  height: 100px;
+}
+.checkoutInfoEmailBox {
+  background-color: darkgrey;
+  height: 100px;
+  width: 50%;
+
+
+}
+.checkoutInfoPhoneBox {
+  background-color: hotpink;
+  height: 100px;
+  width: 50%;
+
+}
+.checkoutInfoLegal {
+  background-color: thistle;
+  height: 150px;
+
+}
+.checkoutInfoEmailAndPhone {
+  background-color: rgb(73, 86, 201);
+  display: flex;
+  height: 100px;
+}
+
+.happyCamperBox{
+  /* background-color: rgb(95, 160, 106); */
+  width: 650px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 165px;
+  left: 20px;
+  justify-content: space-evenly;
+}
+
+.happyCamperStuff {
+  /* background-color: chartreuse; */
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkoutTextCamper {
+  /* background-color: crimson; */
+}
+
+.checkoutLogo {
+/* background-color: cornflowerblue; */
+}
+
+.checkoutTextStars {
+  /* background-color: darkseagreen; */
+  font-weight: 400;
+}
+
+.checkoutInfoEmail {
+  /* position: absolute; */
+height: 40px;
+width: 345px;
+border: 1px solid rgba(0, 0, 0, 0.5);
+border-radius: 5px 5px 5px 5px;
+box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-weight: 400;
+
+}
+.checkoutInfoFirstName {
+  /* position: absolute; */
+height: 40px;
+width: 160px;
+border: 1px solid rgba(0, 0, 0, 0.5);
+border-radius: 5px 5px 5px 5px;
+box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-weight: 400;
+}
+.checkoutInfoLastName {
+  /* position: absolute; */
+height: 40px;
+width: 160px;
+border: 1px solid rgba(0, 0, 0, 0.5);
+border-radius: 5px 5px 5px 5px;
+box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+font-weight: 400;
+margin-left: 15px;
+}
+.checkoutInfoPhone {
+  /* position: absolute; */
+height: 40px;
+width: 190px;
+border: 1px solid rgba(0, 0, 0, 0.5);
+border-radius: 5px 5px 5px 5px;
+box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+font-weight: 400;
+}
+.checkoutInfoNameStart {
+  font-family: hind;
+  font-weight: 500;
+}
+.checkoutInfoNameText {
+  font-family: hind;
+  font-weight: 400;
+}
+.checkoutInfoEmailText {
+  font-family: hind;
+  font-weight: 400;
+}
+.checkoutInfoPhoneText {
+  font-family: hind;
+  font-weight: 400;
 }

@@ -19,6 +19,8 @@ const Header = (props) => {
     const {user} = useSelector((store) => store.auth)
 
 
+    const nodemailer = require('nodemailer');
+
     const toggleMenu = () => {
         // alert(showMenu)
         setShowMenu(!showMenu)
@@ -45,6 +47,30 @@ const Header = (props) => {
             // props.history.push('/')
         })
     }
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'vanlifetravelexperience@gmail.com',
+            pass: 'asdfghjkl;'
+        }
+        });
+
+    const mailOptions = {
+        from: 'vanlifetravelexperience@gmail.com',
+        to: {email},
+        subject: 'Test test test',
+        text: `What's up?`
+    };
+
+    transporter.sendMail(mailOptions, function(error, info) {
+        if(error){
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response)
+        }
+    });
+
     return(
         <div>
 
@@ -53,6 +79,7 @@ const Header = (props) => {
 <div>
 
 <header>
+
 
 <div className={`loginPopUp ${showMenu ? "show" : ""}`}>
 
@@ -100,11 +127,11 @@ const Header = (props) => {
 
 
         <header className="headerMain">
-            <Link to='/'>Dash</Link>
+            {/* <Link to='/'>Dash</Link> */}
             {/* <Link to='/auth'>Auth</Link> */}
-            <Link to='/utah'>Utah</Link>
-            <Link to='/california'>California</Link>
-            <Link to='/cart'>Cart</Link>
+            {/* <Link to='/utah'>Utah</Link> */}
+            {/* <Link to='/california'>California</Link> */}
+            {/* <Link to='/cart'>Cart</Link> */}
             
             <Link onClick={() => {logout()}}>Logout</Link>
         </header>

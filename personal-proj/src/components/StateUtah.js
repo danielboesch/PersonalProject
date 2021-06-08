@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Component, connect} from 'react-redux'
@@ -27,14 +28,19 @@ const Utah = (props) => {
        
     return(
         <div>
-            <h5 className='linkHomeTextUtah'>Home</h5>
-            <h5 className='linkCali'>California</h5>
+            <Link to='/' className='linkHomeTextUtah'><b>Home</b></Link>
+            {/* <h5 className='linkHomeTextUtah'>Home</h5> */}
+            <Link to='/california' className='linkCali'><b>California</b></Link>
+            {/* <h5 className='linkCali'>California</h5> */}
         <div className="cartDivUtah" >
-            
-            <img className='cartBtnUtah' alt='cart button' src="https://png.pngtree.com/png-vector/20190927/ourlarge/pngtree-shopping-cart-icon-png-image_1736148.jpg"></img>
+            <Link to='/cart'>
+                    <img className='cartBtnUtah' alt='cart button' src="https://png.pngtree.com/png-vector/20190927/ourlarge/pngtree-shopping-cart-icon-png-image_1736148.jpg"></img>
+            </Link>
         </div>
             <div className="mainImgBox">
                     <h1 className='utahText'>Utah</h1>
+                    <h2 className='utahSubText'>Experience the beauty of Utah</h2>
+
                     {/* <h1 className='utahText2'>Utah</h1> */}
                 <div className="mainImg"></div>
             </div>

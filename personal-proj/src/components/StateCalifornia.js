@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Calendar from './Calendar'
@@ -34,13 +35,18 @@ const Cali = (props) => {
 
 
         <div>
-            <h5 className='linkHomeText'>Home</h5>
-            <h5 className='learnMoreText'>Learn More</h5>
-<div className="cartDiv" >
-<img className='cartBtn' alt='cart button' src="https://png.pngtree.com/png-vector/20190927/ourlarge/pngtree-shopping-cart-icon-png-image_1736148.jpg"></img>
-</div>
+            <Link to='/' className='linkHomeTextCali'><b>Home</b></Link>
+            {/* <h5 className='linkHomeTextCali'>Home</h5> */}
+            <Link to='/utah' className='linkUtah'><b>Utah</b></Link>
+            {/* <h5 className='linkUtah'>Utah</h5> */}
+            <div className="cartDiv" >
+                <Link to='/cart'>
+                        <img className='cartBtnUtah' alt='cart button' src="https://png.pngtree.com/png-vector/20190927/ourlarge/pngtree-shopping-cart-icon-png-image_1736148.jpg"></img>
+                </Link>
+            </div>
             <div className="mainImgBox">
                     <h1 className='caliText'>California</h1>
+                    <h2 className='caliSubText'>Experience the magic of the outdoors</h2>
                     {/* <h1 className='caliText2'>California</h1> */}
                 <div className="mainCaliImg"></div>
             </div>

@@ -12,6 +12,8 @@ module.exports = {
         const hash = bcrypt.hashSync(password, salt)
         const [user] = await db.auth.register_user(email, hash)
         const [cart] = await db.cart.create_cart(user.user_id)
+
+        
         delete user.password
         req.session.user = user
         req.session.user.cart_id = cart.cart_id
