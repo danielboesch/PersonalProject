@@ -84,6 +84,52 @@ html {
   margin-top: -25px;
 }
 
+.dashSection3Text {
+  font-size: 20px;
+  font-family: hind;
+  font-weight: 400;
+  /* background-color: teal; */
+  width: 600px;
+  text-align: justify;
+}
+
+.section3Going {
+  font-size: 22px;
+  font-family: helvetica neue;
+  font-weight: 300;
+}
+.section3Covered {
+  font-size: 50px;
+  font-family: hind;
+  /* background-color: hotpink; */
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section3BigBox {
+  width: 100%;
+  height: 730px;
+  /* background-color: darksalmon; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section3Headers {
+  /* background-color: rgb(14, 180, 14); */
+  /* height: 100px; */
+}
+.section3Content {
+  /* background-color: honeydew; */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .dashCheckList{
   list-style: none;
   /* background-color: cadetblue; */
@@ -224,13 +270,16 @@ color: black;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.35);
   flex-direction: column;
   overflow: hidden;
-  transition: all 0.2s;
   height: 0px;
   align-items: center;
+  transition: all 0.2s;
 }
 
 .show {
   height: 260px;
+}
+.show2 {
+  height: 450px;
 }
 
 
@@ -362,7 +411,6 @@ font-family: hind;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-
 }
 .linkHomeTextCali {
   display: flex;
@@ -398,7 +446,54 @@ font-family: hind;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
-
+}
+.linkHomeTextCart {
+  display: flex;
+  position: absolute;
+  right: 320px;
+  top: 40px;
+  color: rgb(61, 61, 61);
+  width: 70px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
+}
+.linkUtahTextCart {
+  display: flex;
+  position: absolute;
+  right: 262px;
+  top: 40px;
+  color: rgb(61, 61, 61);
+  width: 60px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
+}
+.linkCaliTextCart {
+  display: flex;
+  position: absolute;
+  right: 165px;
+  top: 40px;
+  color: rgb(61, 61, 61);
+  width: 100px;
+  height: 40px;
+  /* background-color: teal; */
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
 }
 .linkCali {
   display: flex;
@@ -556,6 +651,18 @@ font-family: hind;
   cursor: pointer;
   background-color: rgba(121, 121, 121, 0.15);
 }
+.linkHomeTextCart:hover {
+  cursor: pointer;
+  background-color: rgba(121, 121, 121, 0.15);
+}
+.linkUtahTextCart:hover {
+  cursor: pointer;
+  background-color: rgba(121, 121, 121, 0.15);
+}
+.linkCaliTextCart:hover {
+  cursor: pointer;
+  background-color: rgba(121, 121, 121, 0.15);
+}
 .linkCali:hover {
   cursor: pointer;
   background-color: rgba(121, 121, 121, 0.15);
@@ -575,6 +682,10 @@ font-family: hind;
 .homeUtahBtn:hover {
   cursor: pointer;
   background-color: rgb(0, 109, 82);
+}
+.agreeContinue:hover {
+  cursor: pointer;
+  background-color: rgb(0, 139, 105);
 }
 .findRideBtn:hover {
   cursor: pointer;
@@ -1047,13 +1158,7 @@ z-index: -1;
   text-align: left;
 }
 
-/* .checkoutUserInfo {
-  background-color: salmon;
-  width: 50vw;
-  height: 500px;
-  position: absolute;
-  left: 0;
-} */
+
 /* .checkoutColor {
   background-color: rgb(112, 255, 172);
   width: 50vw;
@@ -1066,8 +1171,8 @@ z-index: -1;
 } */
 
 .testtest {
-  background-color: transparent;
-  border: 2px solid black;
+  background-color: white;
+  border: 3px solid black;
   width: 90%;
   height: 100%;
   min-height: 170px;
@@ -1082,6 +1187,7 @@ z-index: -1;
   margin-bottom: 50px;
   border-radius: 10px;
   box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 3;
 }
 .testtest2 {
   /* background-color: white; */
@@ -1129,14 +1235,37 @@ z-index: -1;
 
 }
 .checkoutInfoBox {
-  background-color: cadetblue;
-  position: absolute;
+  background-color: white;
+  border: 3px solid black;
+  position: relative;
   left: 50px;
-  top: 200px;
+  top: 135px;
+  /* height: 450px; */
   width: 750px;
-  height: 600px;
   text-align: left;
+  z-index: 4;
+  box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  transition: all 0.2s;
+  overflow: scroll;
 }
+.checkoutPayBox {
+  background-color: white;
+  border: 3px solid black;
+  position: relative;
+  left: 50px;
+  top: 150px;
+  /* height: 450px; */
+  width: 750px;
+  text-align: left;
+  z-index: 4;
+  box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.2);
+  height: 100px;
+  transition: all 0.2s;
+}
+
+
+
 /* -------------------------------------------  CHECKOUT INFO  -------------------------------------------------------- */
 
 .checkoutInfoNameBox {
@@ -1158,7 +1287,7 @@ z-index: -1;
 }
 .checkoutInfoLegal {
   background-color: thistle;
-  height: 150px;
+  height: 100px;
 
 }
 .checkoutInfoEmailAndPhone {
@@ -1173,7 +1302,7 @@ z-index: -1;
   display: flex;
   align-items: center;
   position: absolute;
-  top: 165px;
+  top: 140px;
   left: 20px;
   justify-content: space-evenly;
 }
@@ -1260,6 +1389,48 @@ font-weight: 400;
   font-family: hind;
   font-weight: 400;
 }
+
+
+.backgroundColor {
+  background-color: rgb(255, 246, 235);
+  width: 100vw;
+  min-height: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  right: 0;
+  z-index: -6;
+}
+
+.checkAndLegal {
+  background-color: lightpink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 700px;
+  margin-left: 5px;
+
+}
+.textCertify {
+  background-color: forestgreen;
+  font-size: 11px;
+  margin-left: 10px;
+  width: 700px;
+}
+
+.agreeContinue {
+  border: none;
+  background-color: rgb(0, 112, 84);
+  color: white;
+  font-size: 18px;
+  font-family: hind;
+  font-weight: 600;
+  height: 60px;
+  float: right;
+  margin-top: 25px;
+  margin-right: 25px;
+  box-shadow:  3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
 
 /* -------------------------------------------    FOOTER    ----------------------------------------------------------- */
 

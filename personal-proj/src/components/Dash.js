@@ -23,7 +23,7 @@ const Dash = () => {
         window.scrollTo(600, 600);
       };
       let scrollAbout = () => {
-        window.scrollTo(1275, 1275);
+        window.scrollTo(1700, 1700);
       };
 
 
@@ -92,8 +92,15 @@ const Dash = () => {
             </section>
             <section className='dashSection3'>
                 <div className='section3BigBox'>
-                    <h1>Our Story</h1>
-                    <p>Whether you are considering van life as a part-time or full-time endeavor, investing in or converting a van is a process full of big decisions. Navigating the many different options, set-ups, conversions, and even designing your nomadic lifestyle can feel overwhelming. So before taking the plunge, we're here to give you that van life experience with less commitment. Whether you're looking for a fun way to travel for a road trip or you're considering if the van life is for you, we're here to help.</p>
+                    <div className='section3Content'>
+
+                    <div className='section3Headers'>
+                        <h3 className='section3Going'>Going on a road trip? Considering van life?</h3>
+                        <h1 className='section3Covered'>We've got you covered</h1>
+                    </div>
+                    <p className='dashSection3Text'>
+                        Whether you're taking a road trip, or considering van life as a part-time or full-time endeavor, investing in or converting a van is a process full of big decisions. Navigating the many different options, set-ups, conversions, and even designing your nomadic lifestyle can feel overwhelming. So before taking the plunge, we're here to give you that van life experience with less commitment. Whether you're looking for a fun way to travel or you're considering if the van life is right for you, we're here to help.</p>
+                    </div>
                 </div>
             </section>
             <Footer />

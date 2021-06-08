@@ -1,4 +1,6 @@
 const bcrypt = require('bcryptjs')
+const nodemailer = require('nodemailer');
+
 
 module.exports = {
     register: async (req, res) => {
@@ -12,8 +14,27 @@ module.exports = {
         const hash = bcrypt.hashSync(password, salt)
         const [user] = await db.auth.register_user(email, hash)
         const [cart] = await db.cart.create_cart(user.user_id)
-
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'vanlifetravelexperience@gmail.com',
+                pass: "asdfghjkl;'"
+            }
+            });
         
+        const mailOptions = {
+            from: 'vanlifetravelexperience@gmail.com',
+            to: email,
+            subject: 'Welcome to Van Life Travel Experience!',
+            text: "Yooooo wassup"
+        };
+        transporter.sendMail(mailOptions, function(error, info) {
+            if(error){
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response)
+            }
+        });
         delete user.password
         req.session.user = user
         req.session.user.cart_id = cart.cart_id

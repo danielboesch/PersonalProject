@@ -1,11 +1,27 @@
+import {useState} from 'react'
+import {Link} from 'react-router-dom'
 import {useEffect} from 'react'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import {setCart} from '../redux/cartReducer'
+import Footer from './Footer'
+import {connect} from 'react-redux';
+
+
 
 const Cart = (props) => {
     const {cart} = useSelector((store) => store.cartReducer)
     const dispatch = useDispatch()
+
+    const [showBox, setShowBox] = useState(true)
+    const [showPay, setShowPay] = useState(false)
+
+    const toggleBox = () => {
+        alert(showBox)
+        // alert(showPay)
+        setShowBox(!showBox)
+        setShowPay(!showPay)
+      }
 
     useEffect(() => {
         axios.get('/api/cart')
@@ -40,11 +56,14 @@ const Cart = (props) => {
 
 
     return(
+        <div className='backgroundColor'>
+
         <div>
-            <h5 className='learnMoreText'>Learn More</h5>
-            <div className="worldDiv" >
-                <img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png"></img>
-            </div>
+            <Link to='/' className='linkHomeTextCart'><b>Home</b></Link>
+            <Link to='/utah' className='linkUtahTextCart'><b>Utah</b></Link>
+            <Link to='/california' className='linkCaliTextCart'><b>California</b></Link>
+            {/* <h5 className='learnMoreText'>Learn More</h5> */}
+
             <h1>Cart Page</h1>
             <div className='happyCamperBox'>
                 <div className='happyCamperStuff'>
@@ -53,7 +72,7 @@ const Cart = (props) => {
                 </div>
                 <h4 className='checkoutTextStars'>Our customer reviews have us seeing stars.</h4>
             </div>
-            <div className='checkoutInfoBox'>
+            <div className={`checkoutInfoBox ${showBox ? "show2" : ""}`}>
                 <h3 className='checkoutInfoNameStart'>Start Your Booking</h3>
                 <div className='checkoutInfoNameBox'>
                 <h3 className='checkoutInfoNameText'>Name</h3>
@@ -72,13 +91,20 @@ const Cart = (props) => {
                 </div>
 
                 <div className='checkoutInfoLegal'>
-                    <input type="checkbox"></input>
-                    <h4>I certify that I am at least 25 years old at the time of rental and I have a valid drivers license.</h4>
+                    <div className='checkAndLegal'>
+                        <input type="checkbox" className='checkBox'></input>
+                        <h4 className='textCertify'>I certify that I am at least 25 years old at the time of rental and I have a valid drivers license.</h4>
+                    </div>
                     <p>By clicking "Agree & Continue", you are agreeing to the Outdoorsy Terms of Service, RV Rental & Optional Insurance Terms, Privacy Policy, and to receive booking-related texts. Standard messaging rates may apply.</p>
                     <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
                 </div>
-                <button>Agree & Continue</button>
+                <button className='agreeContinue' onClick={toggleBox}>Agree & Continue</button>
             </div>
+            <div className={`checkoutPayBox ${showBox ? "show2" : ""}`}>
+
+            </div>
+            <button onClick={toggleBox}></button>
+
             <div className='testtest2'>
 
             <div className='testtest'>
@@ -437,9 +463,7 @@ const Cart = (props) => {
                     <div>
                     <div className='checkoutOrderInfo'>
                         <div className='checkoutColor'> </div>
-                        <div className='checkoutUserInfo'>
-
-                        </div>
+                        <div className='checkoutUserInfo'></div>
 
                  
                         <div key={product.product_cart_id}  className='checkoutAllVanInfo'>
@@ -462,10 +486,12 @@ const Cart = (props) => {
                             <h5 className='checkoutDatesEnd'>{endMonth} {endDay}, {endYear}</h5>
                         </div>
 
+                    
                     </div>
                     </div>
                 )
             })}
+        </div>
         </div>
         </div>
         </div>
