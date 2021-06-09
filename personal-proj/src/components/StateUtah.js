@@ -4,9 +4,11 @@ import axios from 'axios'
 import {Component, connect} from 'react-redux'
 import Calendar from './Calendar'
 import {useSelector, useDispatch} from 'react-redux'
+import Footer from './Footer'
 
 const Utah = (props) => {
     const [utahProducts, setUtahProducts] = useState([])
+    const [utahExtras, setUtahExtras] = useState([]);
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const {user} = useSelector((store) => store.auth)
@@ -19,9 +21,21 @@ const Utah = (props) => {
         })
         .catch(err => console.log(err))
     }, [])
+    useEffect(() => {
+        axios.get('/api/extras')
+        .then((res) => {
+            setUtahExtras(res.data)
+        })
+        .catch(err => console.log(err))
+    }, [])
 
        const handleAddToCart = (product_id) => {
         axios.post(`/api/cart/${product_id}`, {startDate, endDate})
+        .then(() => console.log('sent to cart'))
+        .catch((err) => console.log(err))
+       }
+       const handleExtraAddToCart = (product_id) => {
+        axios.post(`/api/cart/${product_id}`)
         .then(() => console.log('sent to cart'))
         .catch((err) => console.log(err))
        }
@@ -84,6 +98,39 @@ const Utah = (props) => {
                     }
             })}
              </section>
+             <section className='allMappedNonVans'>
+
+             {utahProducts.map((product) => {
+                console.log(product.location_id)
+                if(product.product_type === 'extra'){
+                 return (
+                     <div key={product.product_id}>
+                            <div className='mappedUtahVans'>
+                            <div className='mappedImageBox'>
+                                <img className='pics' src={product.product_img}/>
+                            </div>
+
+                            <div className='mappedUtahInfo'>
+                                <h4 className="mappedDesc">{product.product_description}</h4>
+                                <h4 className="mappedTitle">{product.product_name}</h4>
+                                <div className='priceRatingBox'>
+                                    <h4 className="mappedPrice"><b>${product.extra_products_price}</b></h4>
+                                </div>
+                            </div>
+                            {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
+
+                            {user && <button className="reserveBtn" onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
+                            
+                            </div>
+                        </div>
+                        )
+                    }
+            })}
+
+        
+                 
+             </section>
+             <Footer />
             
         </div>
     )

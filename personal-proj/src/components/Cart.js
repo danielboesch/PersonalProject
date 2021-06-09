@@ -12,15 +12,14 @@ import {connect} from 'react-redux';
 const Cart = (props) => {
     const {cart} = useSelector((store) => store.cartReducer)
     const dispatch = useDispatch()
-
     const [showBox, setShowBox] = useState(true)
-    const [showPay, setShowPay] = useState(false)
+  
 
+    
+    
     const toggleBox = () => {
-        alert(showBox)
-        // alert(showPay)
+        // alert(showBox)
         setShowBox(!showBox)
-        setShowPay(!showPay)
       }
 
     useEffect(() => {
@@ -52,11 +51,13 @@ const Cart = (props) => {
         .catch(err => console.log(err))
     }
     }
+    
 
 
 
     return(
         <div className='backgroundColor'>
+        <div className='backgroundColor2'></div>
 
         <div>
             <Link to='/' className='linkHomeTextCart'><b>Home</b></Link>
@@ -65,61 +66,19 @@ const Cart = (props) => {
             {/* <h5 className='learnMoreText'>Learn More</h5> */}
 
             <h1>Cart Page</h1>
-            <div className='happyCamperBox'>
-                <div className='happyCamperStuff'>
-                    <img className='checkoutLogo' src='https://d1o5877uy6tsnd.cloudfront.net/reserve-production/images/icons/shield-a4c1a09ebef7f7f5096eb5600ef5c5c3.svg'></img>
-                    <h3 className='checkoutTextCamper'>Happy camper guarantee</h3>
-                </div>
-                <h4 className='checkoutTextStars'>Our customer reviews have us seeing stars.</h4>
-            </div>
-            <div className={`checkoutInfoBox ${showBox ? "show2" : ""}`}>
-                <h3 className='checkoutInfoNameStart'>Start Your Booking</h3>
-                <div className='checkoutInfoNameBox'>
-                <h3 className='checkoutInfoNameText'>Name</h3>
-                  <input className='checkoutInfoFirstName' placeholder='First'></input>
-                  <input className='checkoutInfoLastName'placeholder='Last'></input>
-                </div>
-                <div className='checkoutInfoEmailAndPhone'>
-                    <div className='checkoutInfoEmailBox'>
-                    <h3 className='checkoutInfoEmailText'>Email</h3>
-                    <input className='checkoutInfoEmail' placeholder='Email'></input>
-                    </div>
-                    <div className='checkoutInfoPhoneBox'>
-                    <h3 className='checkoutInfoPhoneText'>Phone</h3>
-                    <input className='checkoutInfoPhone' placeholder='(XXX) XXX-XXXX'></input>
-                    </div>
-                </div>
-
-                <div className='checkoutInfoLegal'>
-                    <div className='checkAndLegal'>
-                        <input type="checkbox" className='checkBox'></input>
-                        <h4 className='textCertify'>I certify that I am at least 25 years old at the time of rental and I have a valid drivers license.</h4>
-                    </div>
-                    <p>By clicking "Agree & Continue", you are agreeing to the Outdoorsy Terms of Service, RV Rental & Optional Insurance Terms, Privacy Policy, and to receive booking-related texts. Standard messaging rates may apply.</p>
-                    <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
-                </div>
-                <button className='agreeContinue' onClick={toggleBox}>Agree & Continue</button>
-            </div>
-            <div className={`checkoutPayBox ${showBox ? "show2" : ""}`}>
-
-            </div>
-            <button onClick={toggleBox}></button>
 
             <div className='testtest2'>
 
             <div className='testtest'>
-            
-            {cart.map((product) => { 
+
+            {cart.slice(0).reverse().map((product) => { 
                 let startmonth = '';
                 let startday = '';
                 let startyear = '';
                 let endMonth = '';
                 let endDay = '';
                 let endYear = '';
-
-                        // if(product.date_start2 === "2021-06-14T18:00:00.000Z"){
-                        //     product.date_start2 = "test"
-                        // }
+            
 
                         if(product.date_start2.includes("-01-")){
                             startmonth = 'January'
@@ -459,7 +418,62 @@ const Cart = (props) => {
                     
                         
                 console.log(product)
+        
                 return(
+                    <div>
+                        <div className='startBookingAndPayment'>
+
+                            <div className='happyCamperBox'>
+                                <div className='happyCamperStuff'>
+                                    <img className='checkoutLogo' src='https://d1o5877uy6tsnd.cloudfront.net/reserve-production/images/icons/shield-a4c1a09ebef7f7f5096eb5600ef5c5c3.svg'></img>
+                                    <h3 className='checkoutTextCamper'>Happy camper guarantee</h3>
+                                </div>
+                                <h4 className='checkoutTextStars'>Our customer reviews have us seeing stars.</h4>
+                            </div>
+                            <div className={`checkoutInfoBox ${showBox ? "show2" : ""}`}>
+                                <h3 className='checkoutInfoNameStart'>Start Your Booking</h3>
+                                <div className='checkoutInfoNameBox'>
+                                    <h3 className='checkoutInfoNameText'>Name</h3>
+                                    <input className='checkoutInfoFirstName' placeholder='First'></input>
+                                    <input className='checkoutInfoLastName' placeholder='Last'></input>
+                                </div>
+                                <div className='checkoutInfoEmailAndPhone'>
+                                    <div className='checkoutInfoEmailBox'>
+                                    <h3 className='checkoutInfoEmailText'>Email</h3>
+                                    <input className='checkoutInfoEmail' placeholder='Email'></input>
+                                    </div>
+                                    <div className='checkoutInfoPhoneBox'>
+                                    <h3 className='checkoutInfoPhoneText'>Phone</h3>
+                                    <input className='checkoutInfoPhone' required placeholder='(XXX) XXX-XXXX'></input>
+                                    </div>
+                                </div>
+
+                                <div className='checkoutInfoLegal'>
+                                    <div className='checkAndLegal'>
+                                        <input type="checkbox" required className='checkBox'></input>
+                                        <h3 className='textCertify'>I certify that I am at least 25 years old at the time of rental and I have a valid drivers license.</h3>
+                                    </div>
+                                    <p className='textByClicking'>By clicking "Agree & Continue", you are agreeing to the Terms of Service, Van Rental & Optional Insurance Terms, Privacy Policy, and to receive booking-related texts. Standard messaging rates may apply.</p>
+                                </div>
+
+                                <button className='agreeContinue' onClick={toggleBox}>Agree & Continue</button>
+                                    </div>
+
+                
+                                <div className={`checkoutPayBox ${showBox ? "" : "show2"}`}>
+                                    <h3  className='checkoutInfoNameStart'>Checkout</h3>
+                                        <div className='totalInfoBox'>
+                                            <h3>Total Rental Days: {(endDay - startday)}</h3>
+                                            <h3>Price/Day: ${product.product_price}</h3>
+                                            <h3>Total Rental Price: ${((endDay - startday) * product.product_price) * product.quantity}</h3>
+                                            {/* <h3>Extras: ${product.extra_products_price}</h3> */}
+                                            <h3>Extras: ${60}</h3>
+                                            <h3>Tax: ${((((endDay - startday) * product.product_price) * product.quantity) + 60) * 0.05 }</h3>
+                                            <h3>Total: ${(((((endDay - startday) * product.product_price) * product.quantity)+ 60) * 0.05 ) + (((endDay - startday) * product.product_price) * product.quantity) + 60}</h3>
+                                        </div>
+                                    <button className='agreeContinue2' onClick={toggleBox}>Finish & Pay</button>
+                                </div>
+                        </div>
                     <div>
                     <div className='checkoutOrderInfo'>
                         <div className='checkoutColor'> </div>
@@ -472,12 +486,16 @@ const Cart = (props) => {
                             </div>
                             <div className='checkoutVanInfo'>
                             <h4 className='mappedTitle2'>{product.product_name}</h4>
-                            {/* <h5>Qty: {product.quantity}</h5> */}
                             <h5 className="mappedDesc2">{product.product_description}</h5>
-                            <h5 className="mappedCapacity2">Sleeps {product.capacity}</h5>
+                            {/* <h5 className="mappedCapacity2">Sleeps {product.capacity}</h5> */}
                             <button className='checkoutDeleteBtn' onClick={() => handleDeleteFromCart(product.product_id)}><b>DELETE</b></button>
-                            {/* <button onClick={() => handleChangeQty(product.product_id, product.quantity - 1)}>-</button> */}
-                            {/* <button onClick={() => handleChangeQty(product.product_id, product.quantity + 1)}>+</button> */}
+                            <div className='qtyBox'>
+                                <h5 className='qtyText'>Quantity: <b>{product.quantity}</b></h5>
+                                <div className='qtyBtnsBox'>
+                                    <button className = 'minusBtn' onClick={() => handleChangeQty(product.product_id, product.quantity - 1)}>-</button>
+                                    <button className = 'plusBtn' onClick={() => handleChangeQty(product.product_id, product.quantity + 1)}>+</button>
+                                </div>
+                            </div>
                         </div>
                         </div>
                         <div className='checkoutDates'>
@@ -489,12 +507,18 @@ const Cart = (props) => {
                     
                     </div>
                     </div>
+                    </div>
                 )
             })}
+            {/* map 118 */}
         </div>
+        {/* 117 */}
         </div>
+        {/* 115 */}
         </div>
-        </div>
+        {/* 62 */}
+        </div> 
+        // 59
     )
 }
 

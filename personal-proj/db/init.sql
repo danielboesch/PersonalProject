@@ -61,3 +61,12 @@ quantity INT,
 start_date DATE,
 end_date DATE
 );
+
+CREATE TABLE extras (
+extras_id SERIAL PRIMARY KEY,
+product_name VARCHAR(100),
+product_type VARCHAR(100),
+product_img TEXT,
+product_description VARCHAR(100),
+extra_products_price INT
+);

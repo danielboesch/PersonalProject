@@ -4,6 +4,7 @@ import axios from 'axios'
 import Calendar from './Calendar'
 import {Component, connect} from 'react-redux'
 import {useSelector, useDispatch} from 'react-redux'
+import Footer from './Footer'
 
 
 
@@ -11,6 +12,7 @@ import {useSelector, useDispatch} from 'react-redux'
 
 const Cali = (props) => {
     const [caliProducts, setCaliProducts] = useState([]);
+    const [caliExtras, setCaliExtras] = useState([]);
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const {user} = useSelector((store) => store.auth)
@@ -20,6 +22,13 @@ const Cali = (props) => {
         axios.get('/api/products')
         .then((res) => {
             setCaliProducts(res.data)
+        })
+        .catch(err => console.log(err))
+    }, [])
+    useEffect(() => {
+        axios.get('/api/extras')
+        .then((res) => {
+            setCaliExtras(res.data)
         })
         .catch(err => console.log(err))
     }, [])
@@ -90,6 +99,11 @@ const Cali = (props) => {
                     }
             })}
              </section>
+            <section className='allMappedNonVans'>
+
+                 
+            </section>
+            <Footer />
             
         </div>
 

@@ -124,7 +124,7 @@ html {
 }
 .section3Content {
   /* background-color: honeydew; */
-  height: 400px;
+  height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -277,9 +277,6 @@ color: black;
 
 .show {
   height: 260px;
-}
-.show2 {
-  height: 450px;
 }
 
 
@@ -462,6 +459,8 @@ font-family: hind;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
+  z-index: 5;
+
 }
 .linkUtahTextCart {
   display: flex;
@@ -478,6 +477,8 @@ font-family: hind;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
+  z-index: 5;
+
 }
 .linkCaliTextCart {
   display: flex;
@@ -494,6 +495,7 @@ font-family: hind;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
+  z-index: 5;
 }
 .linkCali {
   display: flex;
@@ -684,6 +686,14 @@ font-family: hind;
   background-color: rgb(0, 109, 82);
 }
 .agreeContinue:hover {
+  cursor: pointer;
+  background-color: rgb(0, 139, 105);
+}
+.plusBtn:hover {
+  cursor: pointer;
+  background-color: rgb(0, 139, 105);
+}
+.minusBtn:hover {
   cursor: pointer;
   background-color: rgb(0, 139, 105);
 }
@@ -1011,7 +1021,7 @@ z-index: -1;
 .allMappedVans{
   display: flex;
   flex-direction: row;
-  /* background-color: darkorange; */
+  background-color: rgb(255, 249, 240);
   flex-wrap: wrap;
 }
 
@@ -1113,6 +1123,7 @@ z-index: -1;
   margin-right: -15px;
   float: right;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  z-index: 5;
 }
 
 .checkoutOrderImg{
@@ -1148,6 +1159,7 @@ z-index: -1;
   /* background-color: rgb(138, 255, 71); */
   justify-content: space-between;
   margin-top: -20px;
+  z-index: 5;
 }
 .checkoutVanInfo {
   display: flex;
@@ -1187,7 +1199,6 @@ z-index: -1;
   margin-bottom: 50px;
   border-radius: 10px;
   box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.2);
-  z-index: 3;
 }
 .testtest2 {
   /* background-color: white; */
@@ -1196,7 +1207,7 @@ z-index: -1;
   position: absolute;
   right: 0;
   top: 0;
-  z-index: -2;
+  z-index: 2;
 }
 .checkoutDeleteBtn{
   border: none;
@@ -1206,7 +1217,7 @@ z-index: -1;
   width: 100px;
   height: 30px;
   background-color: rgb(255, 198, 112);
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   font-family: Open Sans;
   color: black;
 }
@@ -1245,9 +1256,9 @@ z-index: -1;
   text-align: left;
   z-index: 4;
   box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.2);
-  height: 100px;
+  height: 75px;
   transition: all 0.2s;
-  overflow: scroll;
+  overflow: hidden;
 }
 .checkoutPayBox {
   background-color: white;
@@ -1260,38 +1271,74 @@ z-index: -1;
   text-align: left;
   z-index: 4;
   box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.2);
-  height: 100px;
+  height: 75px;
   transition: all 0.2s;
+  overflow: hidden;
+}
+
+.startBookingAndPayment {
+  position: absolute;
+  left: -850px;
+  top: 50px;
 }
 
 
 
 /* -------------------------------------------  CHECKOUT INFO  -------------------------------------------------------- */
 
+.checkoutInfoNameStart{
+   /* background-color: cornflowerblue; */
+   font-family: hind;
+   height: 75px;
+   font-size: 35px;
+   margin-left: 10px;
+
+}
+.checkoutInfoNameText {
+  /* background-color: rgb(80, 255, 168); */
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+
+}
 .checkoutInfoNameBox {
-  background-color: coral;
-  height: 100px;
+  /* background-color: coral; */
+  height: 80px;
+  margin-left: 10px;
+  
+
 }
 .checkoutInfoEmailBox {
-  background-color: darkgrey;
-  height: 100px;
+  /* background-color: darkgrey; */
+  height: 90px;
   width: 50%;
-
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10px;
 
 }
 .checkoutInfoPhoneBox {
-  background-color: hotpink;
+  /* background-color: hotpink; */
   height: 100px;
   width: 50%;
+  margin-left: 10px;
+    margin-top: 10px;
+
 
 }
 .checkoutInfoLegal {
-  background-color: thistle;
+  /* background-color: thistle; */
   height: 100px;
+  margin-left: 10px;
+
 
 }
 .checkoutInfoEmailAndPhone {
-  background-color: rgb(73, 86, 201);
+  /* background-color: rgb(73, 86, 201); */
   display: flex;
   height: 100px;
 }
@@ -1302,9 +1349,10 @@ z-index: -1;
   display: flex;
   align-items: center;
   position: absolute;
-  top: 140px;
+  top: 100px;
   left: 20px;
   justify-content: space-evenly;
+  
 }
 
 .happyCamperStuff {
@@ -1392,7 +1440,7 @@ font-weight: 400;
 
 
 .backgroundColor {
-  background-color: rgb(255, 246, 235);
+  background-color: rgb(61, 61, 61);
   width: 100vw;
   min-height: 100%;
   overflow-x: hidden;
@@ -1400,21 +1448,39 @@ font-weight: 400;
   right: 0;
   z-index: -6;
 }
+.backgroundColor2 {
+  background-color: rgb(255, 198, 112);
+  width: 100vw;
+  min-height: 600px;
+  overflow-x: hidden;
+  position: absolute;
+  right: 0;
+  z-index: -6;
+}
 
 .checkAndLegal {
-  background-color: lightpink;
+  /* background-color: lightpink; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 700px;
   margin-left: 5px;
+  margin-top: 10px;
 
 }
 .textCertify {
-  background-color: forestgreen;
-  font-size: 11px;
+  /* background-color: forestgreen; */
   margin-left: 10px;
   width: 700px;
+  font-size: 14px;
+}
+.textByClicking {
+  margin-top: 20px;
+  margin-left: 10px;
+  /* background-color: yellowgreen; */
+  width: 70%;
+  /* height: 80px; */
+  color: rgb(0, 75, 56);
 }
 
 .agreeContinue {
@@ -1425,17 +1491,135 @@ font-weight: 400;
   font-family: hind;
   font-weight: 600;
   height: 60px;
+  width: 180px;
   float: right;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-right: 25px;
   box-shadow:  3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.agreeContinue2 {
+  border: none;
+  background-color: rgb(0, 112, 84);
+  color: white;
+  font-size: 18px;
+  font-family: hind;
+  font-weight: 600;
+  height: 60px;
+  width: 180px;
+  float: right;
+  margin-top: 15px;
+  margin-right: 25px;
+  box-shadow:  3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+/* -------------------------------------------    CHECKOUT PAYMENT    ----------------------------------------------------------- */
+.checkoutPayTitle {
+  background-color: cornflowerblue;
+  /* font-family: hind; */
+  height: 75px;
+  font-size: 35px;
+  margin-left: 10px;
+  font-weight: 100;
 }
 
 
 /* -------------------------------------------    FOOTER    ----------------------------------------------------------- */
-
 .footerBox {
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(37, 37, 37);
   width: 100%;
   height: 70px;
+}
+.testButton {
+  position: absolute;
+  left: 90%;
+  top: 50%;
+  z-index: 7;
+}
+
+.showTest {
+  height: 500px;
+}
+.show2 {
+  height: 450px;
+}
+.show3 {
+  height: 450px;
+}
+.roadImg{
+  position: absolute;
+  transform: rotate(135deg);
+  width: 70%;
+  margin-top: 150px;
+}
+.roadPicBox{
+  position: absolute;
+  overflow: hidden;
+  /* background-color: teal; */
+  width: 600px;
+  height: 300px;
+  transform: rotate(180deg);
+  left: 0;
+  margin-top: -155px;
+}
+.allMappedNonVans {
+  background-color: rgb(255, 198, 112);
+  height: 500px;
+}
+
+.addSomething {
+  font-family: hind;
+  font-size: 40px;
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 150px;
+}
+
+.minusBtn {
+border: none;
+width: 25px;
+height: 25px;
+font-size: 20px;
+background-color: rgb(0, 109, 82);
+/* position: absolute; */
+color: white;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.plusBtn {
+  border: none;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  background-color: rgb(0, 109, 82);
+  /* position: absolute; */
+  color: white;
+  /* margin-left: 100px; */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.qtyBox {
+  /* background-color: tomato; */
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+  height: 60px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 160px;
+  margin-top: -65px;
+}
+
+.qtyBtnsBox {
+  /* background-color: teal; */
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.qtyText {
+  font-family: hind;
+}
+.totalInfoBox {
+  background-color: pink;
+  display: flex;
+  flex-direction: row;
 }

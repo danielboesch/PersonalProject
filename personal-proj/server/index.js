@@ -48,6 +48,7 @@ app.get("/auth/logout", authCtrl.logout);
 
 //PRODUCTS
 app.get('/api/products', productCtrl.getUtahProducts)
+app.get('/api/extras', productCtrl.getUtahExtras)
 
 //CART
 app.get('/api/cart', cartCtrl.getCart)

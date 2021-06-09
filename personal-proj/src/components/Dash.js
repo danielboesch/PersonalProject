@@ -5,6 +5,7 @@ import Scroll from './ScrollLocations'
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from './Footer'
+// import Test from './Test'
 
 
 
@@ -32,6 +33,7 @@ const Dash = () => {
     return(
         
         <div>
+            {/* <Test /> */}
             <h5 className='learnMoreText' onClick={scrollAbout}>Learn More</h5>
         <div className="worldDiv" >
             <img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png" onClick={scrollBtn}></img>
@@ -99,7 +101,10 @@ const Dash = () => {
                         <h1 className='section3Covered'>We've got you covered</h1>
                     </div>
                     <p className='dashSection3Text'>
-                        Whether you're taking a road trip, or considering van life as a part-time or full-time endeavor, investing in or converting a van is a process full of big decisions. Navigating the many different options, set-ups, conversions, and even designing your nomadic lifestyle can feel overwhelming. So before taking the plunge, we're here to give you that van life experience with less commitment. Whether you're looking for a fun way to travel or you're considering if the van life is right for you, we're here to help.</p>
+                        Whether you're taking a road trip, or thinking about van life as a part-time or full-time endeavor, investing in or converting a van is a process full of big decisions. Navigating the many different options, set-ups, conversions, and even designing your nomadic lifestyle can feel overwhelming. So before taking the plunge, we're here to give you that van life experience with less commitment. Whether you're looking for a fun way to travel or you're considering if the van life is right for you, we're here to help.</p>
+                        <div className='roadPicBox'>
+                            <img className='roadImg' alt='road' src='http://www.duwemetal.com/wp-content/uploads/2020/08/straight-road-clipart-8.jpg'/>
+                        </div>
                     </div>
                 </div>
             </section>
