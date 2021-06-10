@@ -22,7 +22,7 @@ const Cart = (props) => {
         setShowBox(!showBox)
       }
     const togglePay = () => {
-        alert('Thank you for your purchase.')
+        // alert('Thank you for your purchase.')
         setShowBox(!showBox)
       }
 
@@ -69,7 +69,7 @@ const Cart = (props) => {
             <Link to='/california' className='linkCaliTextCart'><b>California</b></Link>
             {/* <h5 className='learnMoreText'>Learn More</h5> */}
 
-            <h1>Cart Page</h1>
+            <h1>One more step</h1>
 
             <div className='testtest2'>
 
@@ -434,7 +434,7 @@ const Cart = (props) => {
                                 </div>
                                 <h4 className='checkoutTextStars'>Our customer reviews have us seeing stars.</h4>
                             </div>
-                            <div className={`checkoutInfoBox ${showBox ? "show2" : ""}`}>
+                            <div className={`checkoutInfoBox ${showBox ? "showTest" : ""}`}>
                                 <h3 className='checkoutInfoNameStart'>Start Your Booking</h3>
                                 <div className='checkoutInfoNameBox'>
                                     <h3 className='checkoutInfoNameText'>Name</h3>
@@ -467,14 +467,20 @@ const Cart = (props) => {
                                 <div className={`checkoutPayBox ${showBox ? "" : "show2"}`}>
                                     <h3  className='checkoutInfoNameStart'>Checkout</h3>
                                         <div className='totalInfoBox'>
-                                            <h3>Total Rental Days: {(endDay - startday)}</h3>
-                                            <h3>Price/Day: ${product.product_price}</h3>
-                                            <h3>Total Rental Price: ${((endDay - startday) * product.product_price) * product.quantity}</h3>
+                                            <div className='daysAndPrice'>
+                                                <h3 className='paymentTotalDays'>Rental Days: <b className='daysNum'>{(endDay - startday)}</b></h3>
+                                                <div className='lineAboveTitle2'></div>
+
+                                                <h3 className='paymentPerDay'><b className='daysNum'>${product.product_price}</b>/Day</h3>
+                                            </div>
+                                            <h3 className='paymentTotalPreTax'>Rental Price: <b className='daysNum'>${((endDay - startday) * product.product_price) * product.quantity}</b></h3>
                                             {/* <h3>Extras: ${product.extra_products_price}</h3> */}
-                                            <h3>Tax: ${((((endDay - startday) * product.product_price) * product.quantity)) * 0.05 }</h3>
-                                            <h3>Total: ${(((((endDay - startday) * product.product_price) * product.quantity)) * 0.05 ) + (((endDay - startday) * product.product_price) * product.quantity)}</h3>
+                                            <h3 className='paymentTax'>Tax: <b className='daysNum'>${((((endDay - startday) * product.product_price) * product.quantity)) * 0.05 }</b></h3>
+                                            <div className='lineAboveTitle'></div>
+                                            <h3 className='paymentTotal'>Total: <b className='daysNum'>${(((((endDay - startday) * product.product_price) * product.quantity)) * 0.05 ) + (((endDay - startday) * product.product_price) * product.quantity)}</b></h3>
+                                            <p className='textByClicking2'>By continuing, I agree to the <b>Terms of Service.</b> I also understand that only verified and approved drivers are authorized to operate the vehicle.</p>
                                     </div>
-                                    <button className='agreeContinue2' onClick={togglePay}>Finish & Pay</button>
+                                    <button className='agreeContinue2' onClick={togglePay}>Book it!</button>
                                 </div>
                         </div>
                     <div>

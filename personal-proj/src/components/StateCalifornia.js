@@ -137,7 +137,7 @@ const Cali = (props) => {
                 console.log(product.location_id)
                 if(product.product_type === 'extra'){
                  return (
-                     <div key={product.product_id}>
+                     <div key={product.product_id} className='extraStuff'>
                             {!user && <div className='mappedUtahNonVans'>
                             <div className='mappedImageBox5'>
                                 <img className='pics' src={product.product_img}/>

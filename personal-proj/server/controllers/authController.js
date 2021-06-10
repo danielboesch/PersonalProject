@@ -25,8 +25,8 @@ module.exports = {
         const mailOptions = {
             from: 'vanlifetravelexperience@gmail.com',
             to: email,
-            subject: 'Welcome to Van Life Travel Experience!',
-            text: "Yooooo wassup"
+            subject: 'Welcome to Nomad Travel Co.',
+            text: "Hi there, thanks for making an account with Nomad Travel Co. If you have any questions about anything feel free to reach out. Happy Travels!" 
         };
         transporter.sendMail(mailOptions, function(error, info) {
             if(error){

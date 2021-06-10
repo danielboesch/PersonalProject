@@ -7,8 +7,9 @@ const fs = require('fs')
 
 //ENV
 const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, STRIPE_SECRET_KEY, STRIPE_PUBLIC_KEY} = process.env;
-console.log(STRIPE_SECRET_KEY);
-console.log(STRIPE_PUBLIC_KEY);
+// console.log(STRIPE_SECRET_KEY);
+// console.log(STRIPE_PUBLIC_KEY);
+
 
 
 //CONTROLLERS

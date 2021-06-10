@@ -46,6 +46,8 @@ html {
 }
 
 /* -------------------------------------------   HOME PAGE   ------------------------------------------------------ */
+
+
 .mainVideo {
   width: 100%;
   display: flex;
@@ -700,6 +702,10 @@ font-family: hind;
   cursor: pointer;
   background-color: rgb(0, 139, 105);
 }
+.agreeContinue2:hover {
+  cursor: pointer;
+  background-color: rgb(0, 139, 105);
+}
 .plusBtn:hover {
   cursor: pointer;
   background-color: rgb(0, 139, 105);
@@ -985,7 +991,7 @@ z-index: -1;
   align-items: center;
   border-radius: 15px;
   margin-top: -20px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); */
 
 }
 .mappedImageBox5 {
@@ -1333,7 +1339,7 @@ z-index: -1;
 
 .testtest {
   background-color: white;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   width: 90%;
   height: 100%;
   min-height: 170px;
@@ -1396,7 +1402,7 @@ z-index: -1;
 }
 .checkoutInfoBox {
   background-color: white;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   position: relative;
   left: 50px;
   top: 135px;
@@ -1411,7 +1417,7 @@ z-index: -1;
 }
 .checkoutPayBox {
   background-color: white;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   position: relative;
   left: 50px;
   top: 150px;
@@ -1599,12 +1605,14 @@ font-weight: 400;
 }
 .backgroundColor2 {
   background-color: rgb(255, 198, 112);
-  width: 100vw;
-  min-height: 600px;
+  width: 250vw;
+  min-height: 700px;
   overflow-x: hidden;
   position: absolute;
-  right: 0;
+  right: -50px;
   z-index: -6;
+  transform: rotate(160deg);
+  margin-top: 50px;
 }
 
 .checkAndLegal {
@@ -1614,7 +1622,7 @@ font-weight: 400;
   align-items: center;
   width: 700px;
   margin-left: 5px;
-  margin-top: 10px;
+  margin-top: 15px;
 
 }
 .textCertify {
@@ -1624,8 +1632,21 @@ font-weight: 400;
   font-size: 14px;
 }
 .textByClicking {
-  margin-top: 20px;
   margin-left: 10px;
+  /* background-color: yellowgreen; */
+  width: 70%;
+  /* height: 80px; */
+  color: rgb(0, 75, 56);
+  position: absolute;
+  font-size: 12px;
+  margin-top: 15px;
+
+}
+.textByClicking2 {
+  margin-top: 230px;
+  margin-left: 10px;
+  position: absolute;
+  font-size: 12px;
   /* background-color: yellowgreen; */
   width: 70%;
   /* height: 80px; */
@@ -1642,7 +1663,7 @@ font-weight: 400;
   height: 60px;
   width: 180px;
   float: right;
-  margin-top: 15px;
+  margin-top: -50px;
   margin-right: 25px;
   box-shadow:  3px 3px 5px rgba(0, 0, 0, 0.3);
 }
@@ -1656,7 +1677,7 @@ font-weight: 400;
   height: 60px;
   width: 180px;
   float: right;
-  margin-top: 15px;
+  margin-top: -15px;
   margin-right: 25px;
   box-shadow:  3px 3px 5px rgba(0, 0, 0, 0.3);
 }
@@ -1668,6 +1689,94 @@ font-weight: 400;
   font-size: 35px;
   margin-left: 10px;
   font-weight: 100;
+}
+.totalInfoBox {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  justify-content: space-evenly;
+  margin-left: 10px;
+  margin-top: -5px;
+  height: 170px;
+}
+.paymentTotalDays {
+  /* background-color:teal; */
+  font-family: hind;
+  font-size: 22;
+  font-weight: 200;
+  width: 200px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.paymentPerDay {
+  /* background-color: darkseagreen; */
+  font-family: hind;
+  font-size: 22;
+  font-weight: 200;
+  width: 200px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+
+}
+.paymentTotalPreTax {
+  /* background-color:deepskyblue; */
+  font-family: hind;
+  font-size: 22;
+  font-weight: 200;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.paymentTax {
+  /* background-color: darksalmon; */
+  font-family: hind;
+  font-size: 22;
+  font-weight: 200;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.paymentTotal {
+  /* background-color:lavender; */
+  font-family: hind;
+  font-size: 22;
+  font-weight: 200;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.daysNum{
+  /* background-color: lawngreen; */
+  font-family: hind;
+  font-weight: 500;
+  font-size: 23px;
+  color: rgb(0, 102, 0);
+  margin-left: 5px;
+}
+
+.daysAndPrice {
+  /* background-color: lightcoral; */
+  display: flex;
+}
+
+.lineAboveTitle {
+  height: 1px;
+  width: 97%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+}
+.lineAboveTitle2 {
+  height: 1px;
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 143px;
+  top: 87px;
 }
 
 
@@ -1685,10 +1794,10 @@ font-weight: 400;
 }
 
 .showTest {
-  height: 500px;
+  height: 400px;
 }
 .show2 {
-  height: 450px;
+  height: 300px;
 }
 .show3 {
   height: 450px;
@@ -1769,11 +1878,7 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 .qtyText {
   font-family: hind;
 }
-.totalInfoBox {
-  background-color: pink;
-  display: flex;
-  flex-direction: row;
-}
+
 
 .moreOptions {
   /* background-color: seagreen; */
@@ -2308,6 +2413,7 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
       /* margin-left: -55px; */
       left: 30%;
       margin-top: 150px;
+      z-index: 0;
     }
     .mainImg {
       width: 100vw;
@@ -2327,6 +2433,8 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
       text-shadow: 3px 3px rgba(85, 85, 85, 0.5);
       top: 38%;
       left: 30%;
+      z-index: 0;
+
     }
     .mappedUtahNonVans {
       margin-right: 20%;
@@ -2414,12 +2522,14 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
       /* margin-left: -55px; */
       left: 20%;
       margin-top: 150px;
+      z-index: 0;
     }
     .utahSubText{
       color: rgb(255, 198, 112);
       text-shadow: 3px 3px rgba(85, 85, 85, 0.5);
-      top: 39%;
+      top: 35%;
       left: 20%;
+      z-index: 0;
     }
     
   }
