@@ -70,6 +70,8 @@ const Cali = (props) => {
                     <li>✓ More reviews. More 5-star ratings</li>
                 </ul>
               </section>
+              <div className='fillerSection'></div>
+
 
               <section  className='allMappedVans'>
 
@@ -92,7 +94,7 @@ const Cali = (props) => {
                                     <h4 className="mappedPrice"><b>${product.product_price}</b> per day</h4>
                                     <h4 className="mappedRating">{product.rating}★</h4>
                                     <div className='pleaseLoginBox'>
-                                        <h4 className='pleaseLogin'>Please log in to reserve this.</h4>
+                                        <h4 className='pleaseLogin'>Please log in to reserve this</h4>
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +128,8 @@ const Cali = (props) => {
              </section>
              <section className='allMappedNonVans'>
                  <div className='moreOptionsBox'>
-                    <h1 className='moreOptions'>MORE OPTIONS</h1>
+                    <h1 className='moreOptions'>EXTRAS</h1>
+
                  </div>
 
              {caliProducts.map((product) => {
@@ -147,7 +150,7 @@ const Cali = (props) => {
                                 </div>
                             </div>
                             <div className='pleaseLoginBox2'>
-                                        <h4 className='pleaseLogin'>Please log in to reserve this.</h4>
+                                        <h4 className='pleaseLogin'>Please log in to reserve this</h4>
                                     </div>
                             
                             </div>}
