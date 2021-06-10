@@ -3,15 +3,20 @@ require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
+const fs = require('fs')
 
 //ENV
-const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT } = process.env;
+const { CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, STRIPE_SECRET_KEY, STRIPE_PUBLIC_KEY} = process.env;
+console.log(STRIPE_SECRET_KEY);
+console.log(STRIPE_PUBLIC_KEY);
+
 
 //CONTROLLERS
 const authCtrl = require("./controllers/authController");
 const productCtrl = require('./controllers/utahController');
 const cartCtrl = require('./controllers/cartController')
 const calendarCtrl = require('./controllers/calendarController')
+
 
 //APP INSTANCE CREATED
 const app = express();

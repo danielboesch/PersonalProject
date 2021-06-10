@@ -1140,9 +1140,9 @@ z-index: -1;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.reserveBtn:focus {
+.reserveBtn:visited {
 
-display: none;
+height: 1px;
 }
 
 .reserveBtn2 {

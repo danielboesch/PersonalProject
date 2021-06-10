@@ -21,6 +21,10 @@ const Cart = (props) => {
         // alert(showBox)
         setShowBox(!showBox)
       }
+    const togglePay = () => {
+        alert('Thank you for your purchase.')
+        setShowBox(!showBox)
+      }
 
     useEffect(() => {
         axios.get('/api/cart')
@@ -470,7 +474,7 @@ const Cart = (props) => {
                                             <h3>Tax: ${((((endDay - startday) * product.product_price) * product.quantity)) * 0.05 }</h3>
                                             <h3>Total: ${(((((endDay - startday) * product.product_price) * product.quantity)) * 0.05 ) + (((endDay - startday) * product.product_price) * product.quantity)}</h3>
                                     </div>
-                                    <button className='agreeContinue2' onClick={toggleBox}>Finish & Pay</button>
+                                    <button className='agreeContinue2' onClick={togglePay}>Finish & Pay</button>
                                 </div>
                         </div>
                     <div>

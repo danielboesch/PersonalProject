@@ -16,6 +16,9 @@ const Utah = (props) => {
     const {user} = useSelector((store) => store.auth)
 
 
+
+
+
     useEffect(() => {
         axios.get('/api/products')
         .then((res) => {
@@ -32,6 +35,7 @@ const Utah = (props) => {
     }, [])
 
        const handleAddToCart = (product_id) => {
+        window.scrollTo(1700, 1700)
         axios.post(`/api/cart/${product_id}`, {startDate, endDate})
         .then(() => console.log('sent to cart'))
         .catch((err) => console.log(err))
