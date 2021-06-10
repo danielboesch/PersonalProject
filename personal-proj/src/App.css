@@ -63,6 +63,15 @@ html {
   height: 550px;
   /* background-color: rgba(165, 42, 42, 0.151); */
   overflow: hidden;
+  position: absolute;
+}
+.videoBoxBoxDash {
+    /* background-color: coral; */
+    display: flex;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+  
 }
 
 .dashSection1 {
@@ -394,6 +403,7 @@ font-family: hind;
   justify-content: center;
   border-radius: 25px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 5;
 
 }
 .linkHomeText {
@@ -538,6 +548,7 @@ font-family: hind;
   top: 51px;
   width: 20px;
   height: 20px;
+  z-index: 5;
 }
 .cartBtn{
   display: flex;
@@ -1818,7 +1829,408 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 
 .fillerSection {
   background-color: rgb(250, 240, 255);
-  width: 500%;
+  width: 100%;
   height: 40px;
 }
 
+/* -----------------------------------   RESPONSIVENESS  ------------------------------------------- */
+/* -----------------------------------   Home Page  ------------------------------------------- */
+
+
+@media (min-width: 1500px){
+
+  .mainVideo {
+    /* width: 250%; */
+    display: flex;
+    position: absolute;
+    height: 210%;
+    margin-top: -200px;
+    /* background-color: cadetblue; */
+    right: 0;
+  }
+  
+  
+}
+@media (max-width: 1420px){
+
+  
+  .dashCheckList > li{
+    margin-right: 40px;
+    color: white;
+    }
+}
+@media (max-width: 1200px){
+
+  .dashCheckList{
+    list-style: none;
+    /* background-color: cadetblue; */
+    display: flex;
+    align-items: center;
+  
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    /* background-color: teal; */
+  }
+
+  
+  .dashCheckList > li{
+    margin-right: 30px;
+    color: white;
+    }
+
+  
+}
+
+@media (max-width: 1100px){
+
+
+  .mainVideo {
+    width: 150%;
+    display: flex;
+    position: absolute;
+    margin-right: -200px;
+    /* background-color: cadetblue; */
+    right: 0;
+  }
+  
+  
+  .videoBox {
+    /* display: flex; */
+    width: 100%;
+    /* margin-left: -100px; */
+    /* height: 550px; */
+    overflow: hidden;
+    /* background-color: pink;  */
+  }
+
+  .homeTitle {
+    font-size: 70px;
+    font-family: hind;
+    margin-top: -80px;
+    line-height: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
+}
+
+@media (max-width: 1020px){
+
+  .dashCheckList > li{
+    margin-right: 15px;
+    color: white;
+    }
+
+    .dashCheckList{
+      list-style: none;
+      /* background-color: cadetblue; */
+      display: flex;
+      align-items: center;
+    
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      position: absolute;
+      /* background-color: teal; */
+    }
+  
+
+
+}
+
+@media (max-width: 920px){
+
+  .dashCheckList > li{
+    margin-right: 10px;
+    color: white;
+    }
+
+    .dashCheckList{
+      list-style: none;
+      /* background-color: cadetblue; */
+      display: flex;
+      align-items: center;
+    
+      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+      position: absolute;
+      /* background-color: teal; */
+    }
+  
+
+
+}
+@media (max-width: 800px){
+
+  .dashCheckList > li{
+    display: none;
+    }
+
+    .dashCheckList{
+      display: none;
+    }
+  
+
+
+}
+
+
+@media (max-width: 700px){
+
+  
+  
+  
+  .mainVideo {
+    width: 180%;
+    display: flex;
+    position: absolute;
+    margin-right: -150px;
+    /* background-color: cadetblue; */
+    right: 0;
+  }
+
+
+}
+
+@media (max-width: 600px){
+
+  
+  .videoBox {
+    /* display: flex; */
+    width: 100%;
+    /* margin-left: -100px; */
+    /* height: 550px; */
+    overflow: hidden;
+    background-color: rgb(61, 61, 61); 
+  };
+
+
+}
+@media (max-width: 750px){
+
+  .utahBackgroundColor {
+    background-color: black;
+    width: 315px;
+    height: 60px;
+    position: relative;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.4);
+    margin-left: 621px;
+    z-index: 0;
+  }
+  .locationUtah {
+    width: 325px;
+    height: 250px;
+    /* background-color: teal; */
+    border: black 5px solid;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    /* border-radius: 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+  .homeLocationImgBox{
+    display: none;
+  
+  }
+  .locationCali {
+    width: 325px;
+    height: 250px;
+    /* background-color: teal; */
+    border: black 5px solid;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    /* border-radius: 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+  .homeLocationImgBox{
+    display: none;
+  
+  }
+  .locationsTextAndBar {
+    /* background-color: teal; */
+    margin-top: 25px;
+    margin-left: -20px;
+    margin-bottom: 50px;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+
+.dashCheckList{
+  display: none;
+}
+
+.section3Going {
+  font-size: 18px;
+  font-family: helvetica neue;
+  font-weight: 300;
+}
+.section3Covered {
+  font-size: 40px;
+  font-family: hind;
+  /* background-color: hotpink; */
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashSection3Text {
+  font-size: 18px;
+  font-family: hind;
+  font-weight: 400;
+  /* background-color: teal; */
+  width: 500px;
+  text-align: justify;
+}
+
+
+  
+  /* .utahBoxInBox{
+    background-color: darkgreen;
+    height: 365px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 115px;
+  }
+   */
+  /* .dashLocationsUtahInfo {
+  background-color: cornflowerblue;
+  margin-right: 20px;
+  width: 295px;
+  font-size: 15px;
+  margin-left: 25px;
+  margin-top: -50px;
+  text-align: justify;
+  font-family: Helvetica;
+  line-height: 1.6;
+  font-weight: 500; 
+  } */
+
+
+}
+@media (max-width: 650px){
+
+
+  .dashSection3Text {
+    font-size: 17px;
+    font-family: hind;
+    font-weight: 400;
+    /* background-color: teal; */
+    width: 400px;
+    text-align: justify;
+    /* margin-left: 40px; */
+  }
+  
+  .section3Going {
+    display: none;
+  }
+  .section3Covered {
+    margin-left: -10px;
+  }
+
+  .roadPicBox{
+    position: absolute;
+    overflow: hidden;
+    /* background-color: teal; */
+    width: 300px;
+    height: 300px;
+    transform: rotate(180deg);
+    left: 0;
+    margin-top: -155px;
+  }
+  
+  .roadImg{
+    position: absolute;
+    transform: rotate(135deg);
+    width: 100%;
+    margin-top: 200px;
+    margin-left: -50px;
+  }
+
+  .learnMoreText {
+    display: none;
+  }
+  .worldBtn{
+    display: none;
+  }
+  .findRideBtn{
+    display: none;
+  }
+  .homeTitle {
+    font-size: 70px;
+    font-family: hind;
+    margin-top: 80px;
+    line-height: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+   
+  
+
+}
+
+/* -----------------------------------   Home Page DONE  ------------------------------------------- */
+/* -----------------------------------   Utah Page  ------------------------------------------- */
+
+@media (max-width: 650px){
+
+  .linkHomeTextUtah {
+    display: none;
+  }
+  .linkCali {
+    display: none;
+  }
+  .cartDivUtah {
+    display: none;
+  }
+
+
+}
+@media (max-width: 750px){
+
+  .linkHomeTextUtah {
+    display: none;
+  }
+  .linkCali {
+    display: none;
+  }
+  .cartDivUtah {
+    display: none;
+  }
+
+  .utahText{
+    position: absolute;
+    font-family: hind;
+    color: rgb(61, 61, 61);
+    text-shadow: 3px 3px rgba(255, 255, 255, 0.50);
+    font-size: 100px;
+    left: 30vw;
+    top: 70px;
+    z-index: 2;
+  }
+  .utahSubText{
+    display: none;
+  }
+
+
+}

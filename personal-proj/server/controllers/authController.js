@@ -62,7 +62,7 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy()
-        res.sendStatus(200)
+        return res.sendStatus(200)
         // console.log(req.session)
     },
     getUser: (req, res) => {

@@ -47,6 +47,14 @@ const Header = (props) => {
             // props.history.push('/')
         })
     }
+    const logout = () => {
+        axios
+          .get('/auth/logout')
+          .then(() => {
+            props.logout({});
+          })
+          .catch(err => console.log(err));
+      }
 
     return(
         <div>
@@ -110,7 +118,7 @@ const Header = (props) => {
             {/* <Link to='/california'>California</Link> */}
             {/* <Link to='/cart'>Cart</Link> */}
             
-            <Link onClick={() => {logout()}}>Logout</Link>
+            {/* <Link onClick={() => {logout()}}>Logout</Link> */}
         </header>
 
         </div>

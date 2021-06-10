@@ -38,6 +38,8 @@ const Dash = () => {
         <div className="worldDiv" >
             <img className='worldBtn' alt='locations button' src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/globe-icon-18-256.png" onClick={scrollBtn}></img>
         </div>
+        <div className='videoBoxBoxDash'>
+
             <div className="videoBox">
                 <iframe className='mainVideo' src="https://player.vimeo.com/video/513591708?autoplay=1&loop=1&color=A20B35&background=1" width="640" height="860" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             <div className='homeTitleButton'>
@@ -45,6 +47,7 @@ const Dash = () => {
 
                 <button className='findRideBtn scroll-down' onClick={scrollBtn}><strong>Find Your Ride</strong></button>
 
+            </div>
             </div>
             </div>
             <Scroll/>

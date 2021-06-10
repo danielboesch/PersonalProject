@@ -55,6 +55,7 @@ const Utah = (props) => {
             </Link>
         </div>
             <div className="mainImgBox">
+
                     <h1 className='utahText'>Utah</h1>
                     <h2 className='utahSubText'>Experience the beauty of Utah</h2>
 
