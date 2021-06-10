@@ -17,6 +17,7 @@ const Header = (props) => {
     const {user} = useSelector((store) => store.auth)
 
 
+
     const nodemailer = require('nodemailer');
 
     const toggleMenu = () => {
@@ -29,6 +30,7 @@ const Header = (props) => {
         .then((res) => {
             console.log(res.data)
             props.setUser(res.data)
+
             toggleMenu()
 
             // props.history.push('/')
@@ -60,7 +62,7 @@ const Header = (props) => {
 
     <p className="startOfSomethingText">The Start of <br></br><b className="somethingGoodText">Something Good</b></p>
     <input className='homeLoginEmail' placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
-    <input className='homeLoginPassword' placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+    <input type='password' className='homeLoginPassword' placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
     <div className="holdsAuthButtons">
     <button className='homeLoginBtn' onClick={handleLogin}><b>Login</b></button>
     <button className='homeSignUpBtn' onClick={handleRegister}><b>Sign Up</b></button>

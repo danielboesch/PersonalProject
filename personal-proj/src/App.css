@@ -916,15 +916,50 @@ z-index: -1;
 }
 
 
+
 .mappedUtahVans {
   display: flex;
   /* background-color: teal; */
+  flex-direction: column;
+  width: 350px;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.mappedUtahVansLoggedIn {
+  display: flex;
+  /* background-color: firebrick; */
+  flex-direction: column;
+  width: 350px;
+  height: 380px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.mappedUtahNonVans {
+  display: flex;
+  /* background-color: teal; */
+  flex-direction: column;
+  width: 24.7vw;
+  height: 310px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 160px;
+}
+.mappedUtahNonVans2 {
+  display: flex;
+  /* background-color: firebrick; */
   flex-direction: column;
   width: 24.7vw;
   height: 360px;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 130px;
 }
 
 .mappedImageBox {
@@ -936,9 +971,64 @@ z-index: -1;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  
+
+}
+.mappedImageBox5 {
+  /* background-color: tomato; */
+  width: 280px;
+  height: 160px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin-top: -75px;
+
+}
+
+.mappedImageBox4 {
+  /* background-color: tomato; */
+  width: 280px;
+  height: 160px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin-top: -20px;
+
+}
+.mappedImageBox3 {
+  /* background-color: tomato; */
+  width: 280px;
+  height: 160px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+
+}
+.mappedImageBox2 {
+  /* background-color: tomato; */
+  width: 300px;
+  /* height: 160px; */
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin-left: 20px;
+
 }
 .mappedUtahInfo {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  /* background-color: violet; */
+  width: 260px;
+}
+.mappedUtahInfo2 {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -948,6 +1038,13 @@ z-index: -1;
 
 .mappedDesc {
   font-family: hind;
+  font-weight: 500;
+  color: rgb(96, 107, 118);
+
+}
+.mappedDesc3 {
+  font-family: hind;
+  font-size: 17px;
   font-weight: 500;
   color: rgb(96, 107, 118);
 
@@ -963,6 +1060,14 @@ z-index: -1;
   font-weight: 600;
   text-align: left;
   margin-top: -10px;
+
+}
+.mappedTitle3 {
+  font-family: Open Sans;
+  font-weight: 600;
+  text-align: left;
+  margin-top: -10px;
+  font-size: 19px;
 
 }
 .mappedTitle2 {
@@ -986,6 +1091,11 @@ z-index: -1;
 .mappedPrice {
   font-family: Open Sans;
   font-weight: 400;
+}
+.mappedPrice3 {
+  font-family: Open Sans;
+  font-weight: 400;
+  font-size: 20px;
 }
 .mappedRating {
   font-family: Open Sans;
@@ -1012,6 +1122,18 @@ z-index: -1;
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.reserveBtn2 {
+  width: 310px;
+  height: 30px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.205);
+  background-color: rgb(61, 61, 61);
+  color: white;
+  font-family: Open Sans;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 25px;
+}
 .reserveBtn:hover {
   cursor: pointer;
   background-color: rgb(70, 70, 70);
@@ -1019,6 +1141,12 @@ z-index: -1;
 }
 
 .allMappedVans{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(255, 249, 240);
+  flex-wrap: wrap;
+}
+.allMappedNonVans{
   display: flex;
   flex-direction: row;
   background-color: rgb(255, 249, 240);
@@ -1104,9 +1232,7 @@ z-index: -1;
   
 }
 
-.logoutMenuBtn{
 
-}
 
 /* -------------------------------------------   CHECKOUT PAGE   ------------------------------------------------------ */
 
@@ -1562,7 +1688,8 @@ font-weight: 400;
 }
 .allMappedNonVans {
   background-color: rgb(255, 198, 112);
-  height: 500px;
+  min-height: 500px;
+  /* padding-top: 150px; */
 }
 
 .addSomething {
@@ -1622,4 +1749,48 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   background-color: pink;
   display: flex;
   flex-direction: row;
+}
+
+.moreOptions {
+  /* background-color: seagreen; */
+  font-size: 55px;
+  font-family: hind;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.moreOptionsBox {
+  /* background-color: salmon; */
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  margin-top: 20px;
+}
+
+.pleaseLogin {
+  /* background-color: firebrick; */
+  margin-top: 3px;
+  font-family: hind;
+}
+.pleaseLoginBox {
+  /* background-color: fuchsia; */
+  position: absolute;
+  width: 250px;
+  height: 25px;
+  margin-top: 30px;
+  margin-left: 2px;
+  border: 2px solid rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pleaseLoginBox2 {
+  /* background-color: fuchsia; */
+  position: absolute;
+  width: 250px;
+  height: 25px;
+  margin-top: 200px;
+  margin-left: 2px;
+  border: 2px solid rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

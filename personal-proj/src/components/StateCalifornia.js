@@ -5,6 +5,8 @@ import Calendar from './Calendar'
 import {Component, connect} from 'react-redux'
 import {useSelector, useDispatch} from 'react-redux'
 import Footer from './Footer'
+import Scroll from './ScrollLocations'
+
 
 
 
@@ -44,6 +46,7 @@ const Cali = (props) => {
 
 
         <div>
+            <Scroll />
             <Link to='/' className='linkHomeTextCali'><b>Home</b></Link>
             {/* <h5 className='linkHomeTextCali'>Home</h5> */}
             <Link to='/utah' className='linkUtah'><b>Utah</b></Link>
@@ -76,8 +79,30 @@ const Cali = (props) => {
                 if(product.location_id === 2){
                  return (
                      <div key={product.product_id}>
-                            <div className='mappedUtahVans'>
+                            {!user && <div className='mappedUtahVans'>
                             <div className='mappedImageBox'>
+                                <img className='pics' src={product.product_img}/>
+                            </div>
+
+                            <div className='mappedUtahInfo'>
+                                <h4 className="mappedDesc">{product.product_description}</h4>
+                                <h4 className="mappedTitle">{product.product_name}</h4>
+                                <h4 className="mappedCapacity">Sleeps <b>{product.capacity}</b></h4>
+                                <div className='priceRatingBox'>
+                                    <h4 className="mappedPrice"><b>${product.product_price}</b> per day</h4>
+                                    <h4 className="mappedRating">{product.rating}★</h4>
+                                    <div className='pleaseLoginBox'>
+                                        <h4 className='pleaseLogin'>Please log in to reserve this.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
+                            {user && <button className="reserveBtn" onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
+                            
+                            </div>}
+
+                            {user && <div className='mappedUtahVansLoggedIn'>
+                            <div className='mappedImageBox3'>
                                 <img className='pics' src={product.product_img}/>
                             </div>
 
@@ -93,16 +118,65 @@ const Cali = (props) => {
                             {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
                             {user && <button className="reserveBtn" onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
                             
-                            </div>
+                            </div>}
                         </div>
                         )
                     }
             })}
              </section>
-            <section className='allMappedNonVans'>
+             <section className='allMappedNonVans'>
+                 <div className='moreOptionsBox'>
+                    <h1 className='moreOptions'>MORE OPTIONS</h1>
+                 </div>
 
+             {caliProducts.map((product) => {
+                console.log(product.location_id)
+                if(product.product_type === 'extra'){
+                 return (
+                     <div key={product.product_id}>
+                            {!user && <div className='mappedUtahNonVans'>
+                            <div className='mappedImageBox5'>
+                                <img className='pics' src={product.product_img}/>
+                            </div>
+
+                            <div className='mappedUtahInfo2'>
+                                <h4 className="mappedDesc3">{product.product_description}</h4>
+                                <h4 className="mappedTitle3">{product.product_name}</h4>
+                                <div className='priceRatingBox'>
+                                    <h4 className="mappedPrice3"><b>${product.extra_products_price}</b></h4>
+                                </div>
+                            </div>
+                            <div className='pleaseLoginBox2'>
+                                        <h4 className='pleaseLogin'>Please log in to reserve this.</h4>
+                                    </div>
+                            
+                            </div>}
+                           {user && <div className='mappedUtahNonVans2'>
+                            <div className='mappedImageBox'>
+                                <img className='pics' src={product.product_img}/>
+                            </div>
+
+                            <div className='mappedUtahInfo2'>
+                                <h4 className="mappedDesc3">{product.product_description}</h4>
+                                <h4 className="mappedTitle3">{product.product_name}</h4>
+                                <div className='priceRatingBox'>
+                                    <h4 className="mappedPrice3"><b>${product.extra_products_price}</b></h4>
+                                </div>
+                            </div>
+                            {user && <Calendar startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate}/>}
+
+                            {user && <button className="reserveBtn2" onClick={() => handleAddToCart(product.product_id)}>Reserve</button>}
+                            
+                            
+                            </div>}
+                        </div>
+                        )
+                    }
+            })}
+
+        
                  
-            </section>
+             </section>
             <Footer />
             
         </div>

@@ -467,10 +467,9 @@ const Cart = (props) => {
                                             <h3>Price/Day: ${product.product_price}</h3>
                                             <h3>Total Rental Price: ${((endDay - startday) * product.product_price) * product.quantity}</h3>
                                             {/* <h3>Extras: ${product.extra_products_price}</h3> */}
-                                            <h3>Extras: ${60}</h3>
-                                            <h3>Tax: ${((((endDay - startday) * product.product_price) * product.quantity) + 60) * 0.05 }</h3>
-                                            <h3>Total: ${(((((endDay - startday) * product.product_price) * product.quantity)+ 60) * 0.05 ) + (((endDay - startday) * product.product_price) * product.quantity) + 60}</h3>
-                                        </div>
+                                            <h3>Tax: ${((((endDay - startday) * product.product_price) * product.quantity)) * 0.05 }</h3>
+                                            <h3>Total: ${(((((endDay - startday) * product.product_price) * product.quantity)) * 0.05 ) + (((endDay - startday) * product.product_price) * product.quantity)}</h3>
+                                    </div>
                                     <button className='agreeContinue2' onClick={toggleBox}>Finish & Pay</button>
                                 </div>
                         </div>
