@@ -1142,7 +1142,9 @@ z-index: -1;
 }
 .reserveBtn:focus {
 
-height: 0px;}
+display: none;
+}
+
 .reserveBtn2 {
   width: 310px;
   height: 30px;
@@ -2323,7 +2325,7 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     .utahSubText{
       color: rgb(255, 198, 112);
       text-shadow: 3px 3px rgba(85, 85, 85, 0.5);
-      top: 32%;
+      top: 38%;
       left: 30%;
     }
     .mappedUtahNonVans {
@@ -2416,7 +2418,7 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     .utahSubText{
       color: rgb(255, 198, 112);
       text-shadow: 3px 3px rgba(85, 85, 85, 0.5);
-      top: 35%;
+      top: 39%;
       left: 20%;
     }
     
