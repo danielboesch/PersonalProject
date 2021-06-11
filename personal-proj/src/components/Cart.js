@@ -22,8 +22,8 @@ const Cart = (props) => {
         setShowBox(!showBox)
       }
     const togglePay = () => {
-        // alert('Thank you for your purchase.')
-        setShowBox(!showBox)
+        alert('Thank you for your purchase.')
+        // setShowBox(!showBox)
       }
 
     useEffect(() => {
@@ -69,7 +69,7 @@ const Cart = (props) => {
             <Link to='/california' className='linkCaliTextCart'><b>California</b></Link>
             {/* <h5 className='learnMoreText'>Learn More</h5> */}
 
-            <h1>One more step</h1>
+            <h1 className='oneMore'>One more step...</h1>
 
             <div className='testtest2'>
 

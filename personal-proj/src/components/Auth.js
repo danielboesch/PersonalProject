@@ -1,13 +1,16 @@
 import {useState} from 'react'
 import axios from 'axios';
 import {setUser} from '../redux/authReducer';
+import {setCart} from '../redux/cartReducer';
 import {connect} from 'react-redux';
 import Dash from './Dash'
+import {useDispatch} from 'react-redux';
 
 const Auth = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showMenu, setShowMenu] = useState(false)
+    const dispatch = useDispatch()
 
     const toggleMenu = () => {
         // alert(showMenu)
@@ -18,8 +21,11 @@ const Auth = (props) => {
         axios.post('/auth/register', {email, password})
         .then((res) => {
             console.log(res.data)
-            props.setUser(res.data)
-            props.history.push('/')
+            dispatch(setUser(res.data))
+            axios.get('/api/cart').then((response) => {
+                dispatch(setCart(response.data))
+                props.history.push('/')
+            })
         })
         .catch(err => console.log(err))
     }
@@ -27,9 +33,13 @@ const Auth = (props) => {
         axios.post('/auth/login', {email, password})
         .then((res) => {
             console.log(res.data)
-            props.setUser(res.data)
-            props.history.push('/')
+            dispatch(setUser(res.data))
+            axios.get('/api/cart').then((response) => {
+                dispatch(setCart(response.data))
+                props.history.push('/')
+            })
         })
+        .catch(err => console.log(err))
     }
 
     return(
@@ -97,5 +107,5 @@ const Auth = (props) => {
         </div>
     )
 }
-
-export default connect(null, {setUser})(Auth)
+export default Auth
+// export default connect(null, {setUser})(Auth)

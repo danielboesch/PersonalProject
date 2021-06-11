@@ -1146,10 +1146,6 @@ z-index: -1;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.reserveBtn:visited {
-
-height: 1px;
-}
 
 .reserveBtn2 {
   width: 310px;
@@ -1164,6 +1160,11 @@ height: 1px;
   margin-left: 25px;
 }
 .reserveBtn:hover {
+  cursor: pointer;
+  background-color: rgb(70, 70, 70);
+  
+}
+.reserveBtn2:hover {
   cursor: pointer;
   background-color: rgb(70, 70, 70);
   
@@ -1437,6 +1438,14 @@ z-index: -1;
   top: 50px;
 }
 
+.oneMore {
+  font-family: hind;
+  font-size: 40px;
+  position: absolute;
+  left: 25px;
+  top: 15px;
+  font-weight: 300;
+}
 
 
 /* -------------------------------------------  CHECKOUT INFO  -------------------------------------------------------- */

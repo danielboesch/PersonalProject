@@ -6,6 +6,7 @@ import Calendar from './Calendar'
 import {useSelector, useDispatch} from 'react-redux'
 import Footer from './Footer'
 import Scroll from './ScrollLocations'
+import {setCart} from '../redux/cartReducer'
 
 
 const Utah = (props) => {
@@ -14,6 +15,8 @@ const Utah = (props) => {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const {user} = useSelector((store) => store.auth)
+    const {cart} = useSelector((store) => store.cartReducer)
+    const dispatch = useDispatch()
 
 
 
@@ -35,10 +38,21 @@ const Utah = (props) => {
     }, [])
 
        const handleAddToCart = (product_id) => {
-        window.scrollTo(1700, 1700)
-        axios.post(`/api/cart/${product_id}`, {startDate, endDate})
-        .then(() => console.log('sent to cart'))
-        .catch((err) => console.log(err))
+           const product = cart.find((product) => product.product_id === product_id)
+           window.scrollTo(1700, 1700)
+           if(!product){
+               axios.post(`/api/cart/${product_id}`, {startDate, endDate})
+               .then((res) => {
+                   dispatch(setCart(res.data))
+               })
+               .catch((err) => console.log(err))
+           }else{
+               axios.put(`/api/cart/${product_id}`, {quantity: product.quantity + 1})
+               .then((res) => {
+                   dispatch(setCart(res.data))
+               })
+               .catch(err => console.log(err))
+           }
        }
        const handleExtraAddToCart = (product_id) => {
         axios.post(`/api/cart/${product_id}`)
@@ -191,6 +205,8 @@ const Utah = (props) => {
     )
 }
 
-const mapStateToProps = (store) => store.auth
+export default Utah
 
-export default connect(mapStateToProps)(Utah)
+// const mapStateToProps = (store) => store.auth
+
+// export default connect(mapStateToProps)(Utah)
