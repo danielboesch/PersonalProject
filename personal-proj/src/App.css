@@ -2536,7 +2536,7 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     .utahSubText{
       color: rgb(255, 198, 112);
       text-shadow: 3px 3px rgba(85, 85, 85, 0.5);
-      top: 35%;
+      top: 40%;
       left: 20%;
       z-index: 0;
     }
