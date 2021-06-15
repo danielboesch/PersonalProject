@@ -1,5 +1,5 @@
 //IMPORTS
-require("dotenv").config();
+require("dotenv").config({path: __dirname + '/../.env'});
 const express = require("express");
 const massive = require("massive");
 const session = require("express-session");
@@ -46,6 +46,13 @@ massive({
     );
   })
   .catch((err) => console.log(err));
+
+//HOSTING
+app.use(express.static (__dirname + '/../build'));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index/html'))
+})
 
 //ENDPOINTS
 app.post("/auth/register", authCtrl.register);
