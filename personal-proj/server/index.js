@@ -47,27 +47,28 @@ massive({
   })
   .catch((err) => console.log(err));
 
-//HOSTING
-app.use(express.static (__dirname + '/../build'));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build/index/html'))
-})
-
-//ENDPOINTS
-app.post("/auth/register", authCtrl.register);
-app.post("/auth/login", authCtrl.login);
-app.get("/auth/logout", authCtrl.logout);
-
-//PRODUCTS
-app.get('/api/products', productCtrl.getUtahProducts)
-
-//CART
-app.get('/api/cart', cartCtrl.getCart)
-app.post('/api/cart/:product_id', cartCtrl.addToCart)
-app.delete('/api/cart/:product_id', cartCtrl.deleteItemFromCart)
-app.put(`/api/cart/:product_id`, cartCtrl.changeCartQty)
-
-// //CALENDAR
-// app.post('/api/cart/:product_id', calendarCtrl.addStartDate)
-
+  
+  //ENDPOINTS
+  app.post("/auth/register", authCtrl.register);
+  app.post("/auth/login", authCtrl.login);
+  app.get("/auth/logout", authCtrl.logout);
+  
+  //PRODUCTS
+  app.get('/api/products', productCtrl.getUtahProducts)
+  
+  //CART
+  app.get('/api/cart', cartCtrl.getCart)
+  app.post('/api/cart/:product_id', cartCtrl.addToCart)
+  app.delete('/api/cart/:product_id', cartCtrl.deleteItemFromCart)
+  app.put(`/api/cart/:product_id`, cartCtrl.changeCartQty)
+  
+  // //CALENDAR
+  // app.post('/api/cart/:product_id', calendarCtrl.addStartDate)
+  
+  
+  //HOSTING
+  app.use(express.static (__dirname + '/../build'));
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index/html'))
+  })
